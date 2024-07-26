@@ -1,0 +1,31 @@
+*{
+ padding: 0;
+ margin: 0 auto;
+ box-sizing: border-box;
+}
+body{
+    text-align: center;
+    margin-top: 100px;
+}
+.main-table{
+ width: 600px;    
+ height: 600px;
+}
+
+.sub-table{
+    border: 0.5px solid rgb(206, 177, 177);
+    border-collapse: collapse; 
+}
+
+.sub-table tr{
+    font-weight: bold;
+    
+}
+.weekday{
+    background-color: rgb(57, 227, 27);
+}
+.january-table {
+    background-image: url('./img/jan.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }

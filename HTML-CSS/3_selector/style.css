@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* adjucent next to div elm */
+div  + img{
+    color: red;
+}
+
+/* child selctor */
+div >span {
+    color: green;
+}
+
+/* nth child selector  check from parent */
+
+p:nth-child(1){
+    background-color: rgb(255, 127, 144);
+}
+
+/* decentdent selector */
+
+div section h6{
+    background-color: rgb(158, 238, 54);
+}
+
+/* general selector */
+
+div ~ h5 {
+    background-color: aquamarine;
+}

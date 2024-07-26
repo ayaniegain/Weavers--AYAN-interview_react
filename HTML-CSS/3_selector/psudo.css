@@ -1,0 +1,28 @@
+
+p:first-child  {
+    color: blue;
+  }
+  
+p:first-child i {
+    color: red;
+  }
+  
+
+  p::first-letter{
+    color: pink;
+  }
+
+  p::first-line{
+    /* color: red; */
+
+  }
+
+  p::before{
+    content: 'hello';
+    color: rgb(117, 194, 40);
+  }
+
+  i::after{
+    content: 'cricket';
+    color: rgb(194, 40, 181);
+  }
