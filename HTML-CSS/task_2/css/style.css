@@ -7,14 +7,13 @@
 }
 
 section {
-  margin-top: 20px;
-  position: relative;
+  margin: 20px;
 }
 
 .first,
 .second,
 .third {
-  width: 1200px;
+  width: 100%;
 }
 .first {
   height: 400px;
@@ -25,9 +24,7 @@ section {
   text-align: left;
   padding-left: 15px;
 }
-.th-spand {
-  width: 700px;
-}
+
 .first tr td,
 .third tr td {
   padding-left: 15px ;
@@ -53,5 +50,5 @@ th {
     height: 30px;
 }
 table + p {
-  margin: 10px 180px;
+  margin: 10px ;
 }
