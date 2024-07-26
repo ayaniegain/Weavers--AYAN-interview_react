@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(69, 192, 35);
+}
+header,
+footer,
+section {
+  height: 150px;
+}
+
+header {
+  border-bottom: 15px solid white;
+}
+
+nav {
+  width: 20%;
+
+  height: 600px;
+  float: left;
+  border-right: 15px solid white;
+}
+
+.container {
+  height: 600px;
+}
+
+div {
+  width: 80%;
+  float: right;
+}
+
+article {
+  height: 450px;
+  border-bottom: 15px solid white;
+}
+
+section {
+  height: 150px;
+}
+
+footer {
+  border-top: 15px solid white;
+}
+
+p {
+  padding: 20px;
+}
