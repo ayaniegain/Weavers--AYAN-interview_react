@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 40px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.container {
+  background-color: rgb(201, 231, 30);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px;
+}
+
+header,
+footer {
+  background-color: rgb(12, 73, 60);
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+}
+section {
+  display: flex;
+  height: 90%;
+  gap: 20px;
+}
+
+aside {
+  width: 20%;
+  background-color: rgb(26, 196, 211);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background: #005aa7;
+  background: -webkit-linear-gradient(to right, #fffde4, #005aa7);
+  background: linear-gradient(to right, #fffde4, #005aa7);
+}
+div ::first-letter {
+  color: red;
+  background-color: rgb(255, 255, 255);
+}
+
+article {
+  width: 80%;
+  background: #654ea3;
+  background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
+  background: linear-gradient(to right, #eaafc8, #654ea3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+article p {
+  margin-bottom: 20px;
+}
+.img-container {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  justify-content: space-evenly;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 4px solid white;
+}
