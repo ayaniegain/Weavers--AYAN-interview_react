@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 26px;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.one,
+.two {
+  display: flex;
+  height: 50vh;
+}
+
+.innerOne,
+.innertwo {
+  display: flex;
+  width: 50%;
+}
+
+
+.innerOne aside {
+  background-color: #2269bb;
+  width: 50%;
+  border: 10px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.widget1 {
+  background-color: white;
+}
+
+.innertwo,
+.innerfour {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.innerfive {
+  background-color: #2269bb;
+  width: 50%;
+  border: 10px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innertwo > aside {
+  display: flex;
+  height: 50vh;
+  width: 100%;
+  border: 10px solid white;
+  gap: 10px;
+}
+
+.widget0 {
+  background-color: #2269bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.widget2 {
+  background-color: #2269bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerfour > aside {
+  display: flex;
+  height: 50vh;
+  width: 100%;
+  border: 10px solid white;
+  gap: 10px;
+}
+
+.innertwo > aside > div,
+.innerfour > aside div {
+  background-color: #164579;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
