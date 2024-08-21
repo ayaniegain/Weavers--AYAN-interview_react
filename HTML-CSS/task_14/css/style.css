@@ -1,0 +1,18 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+table{
+    width: 60%; height: 25vh;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    
+}
+
+tr:nth-child(odd){
+    background-color: #F2F2F2;
+}
+th{
+     color: white;
+    text-align:center;    
+}
