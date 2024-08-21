@@ -27,22 +27,21 @@ li {
 }
 
 header {
-  font-size: 100px;
+  font-size: 95px;
   word-break: break-all;
-  letter-spacing: 50px;
+  letter-spacing: 35px;
   font-weight: 400;
   text-align: center;
-  word-spacing: 35px;
-  transition: width 2s;
+  word-spacing: 25px;
 }
 
 header:hover {
-  font-size: 100.5px;
+  font-size: 95px;
   word-break: break-all;
-  letter-spacing: 50px;
+  letter-spacing: 35px;
   font-weight: 400;
   text-align: center;
-  word-spacing: 35px;
+  word-spacing: 25px;
   color: rgb(155, 41, 221);
 }
 .pic {
