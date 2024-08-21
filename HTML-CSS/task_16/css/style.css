@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  padding: 50px;
+}
+nav {
+  height: 30px;
+  background-color: rgb(114, 141, 150);
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  color: white;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+li {
+  padding: 5px;
+}
+
+header {
+  font-size: 100px;
+  word-break: break-all;
+  letter-spacing: 50px;
+  font-weight: 400;
+  text-align: center;
+  word-spacing: 35px;
+  transition: width 2s;
+}
+
+header:hover {
+  font-size: 100.5px;
+  word-break: break-all;
+  letter-spacing: 50px;
+  font-weight: 400;
+  text-align: center;
+  word-spacing: 35px;
+  color: rgb(155, 41, 221);
+}
+.pic {
+  height: 250px;
+  width: 400px;
+}
+.card-container-top {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.one {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(139, 218, 191);
+  position: relative;
+}
+
+.one div,
+.two div {
+  text-align: center;
+  flex-direction: column;
+  width: 400px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-evenly;
+  letter-spacing: 2px;
+}
+
+.two {
+  display: flex;
+  background-color: rgb(114, 141, 150);
+}
+
+/* ---------hero section-------- */
+
+.hero{
+    margin-top: 20px;
+    background-image: url('../img/hero_pic.jpg');
+    background-repeat: no-repeat;
+    height: 600px;
+
+    background-size: 100% 600px;
+    /* position: relative; */
+    opacity: 0.8;
+    
+    
+}
+
+.hero-text{
+    /* position: absolute; */
+    /* z-index: -9999999px; */
+    font-weight: bold;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 500px;
+    word-break: break-all;
+    letter-spacing: 10px;
+}
+
+
+
+.hero-text:hover{
+    color:  greenyellow;
+    word-break: break-all;
+    letter-spacing: 30px;
+
+}
+
+
+/* --------card-container-bellow------------ */
+
+
+.card-container-bellow{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  color:  white;
+  text-align: center;
+
+  font-size: 25px;
+
+  padding-bottom: 40px;
+
+}
+
+.card-container-bellow:hover{
+    color: rgb(218, 206, 141);
+}
+.box{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding: 0 50px;
+    letter-spacing: 2px;
+
+}
+
+.boxone{
+  background-color: rgb(114, 141, 150);
+
+
+}
+
+.boxtwo{
+  background-color: rgb(139, 218, 191);
+
+
+}
+.boxtwo:hover{
+    background-color: rgb(12, 63, 12);
+}
+
+.boxthree{
+  background-color: rgb(114, 141, 150);
+
+
+}
+.boxthree h2{
+    font-size: 160px;
+}
