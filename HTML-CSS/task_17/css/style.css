@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0 ;
+    box-sizing: border-box;
+    color:  white;
+    font-size: 22px;
+}
+:root{
+   --mainblue: rgb(80, 80, 216);
+    --maindeepBlue: rgb(19, 19, 133);
+}
+
+.container{
+
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    /* border: 4px solid black; */
+    display: grid;
+    gap:10px;
+
+   grid-template-columns: 2fr 2fr 1fr 1fr 1fr  1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr ;
+
+}
+
+.item1{ 
+    grid-column-start: 1;
+    
+    grid-column-end:3 ;
+    grid-row-start:1 ;
+    grid-row-end:3 ;
+    background-color: var(--mainblue);
+    
+}
+.item2{ 
+    grid-column-start:3 ;
+    grid-column-end:5 ;
+    grid-row-start:1 ;
+    grid-row-end:3 ;
+    background-color: var(--mainblue)
+
+}
+.item3{ 
+    grid-column-start:3 ;
+    grid-column-end:6 ;
+    grid-row-start:1 ;
+    grid-row-end:2 ;
+    background-color: var(--mainblue)
+
+}
+.item4{ 
+    grid-column-start:3 ;
+    grid-column-end:4 ;
+    grid-row-start:2 ;
+    grid-row-end:3 ;
+    background-color: var(--maindeepBlue)
+    
+}
+.item5{ 
+    grid-column-start:4 ;
+    grid-column-end:5 ;
+    grid-row-start:2 ;
+    grid-row-end:3 ;
+    background-color: var(--maindeepBlue)
+}
+.item6{ 
+    grid-column-start:5 ;
+    grid-column-end:6 ;
+    grid-row-start:2 ;
+    grid-row-end:3 ;
+    background-color: var(--maindeepBlue)
+}
+.item7{ 
+    grid-column-start:1 ;
+    grid-column-end:4 ;
+    grid-row-start:3 ;
+    grid-row-end:4 ;
+    background-color: var(--mainblue)
+
+}
+.item8{ 
+    grid-column-start:1 ;
+    grid-column-end:2 ;
+    grid-row-start:4 ;
+    grid-row-end:5 ;
+     background-color: var(--maindeepBlue)
+     
+    }
+    .item9{ 
+        grid-column-start:2 ;
+        grid-column-end:3 ;
+        grid-row-start:4 ;
+        grid-row-end:5 ;
+        background-color: var(--maindeepBlue)
+    }
+    .item10{
+        grid-column-start:3 ;
+        grid-column-end:4 ;
+        grid-row-start:4 ;
+        grid-row-end:5 ;
+        background-color: var(--maindeepBlue)
+}
+.item11{
+    grid-column-start:4 ;
+    grid-column-end:7 ;
+    grid-row-start:3 ;
+    grid-row-end: 5;
+    background-color: var(--mainblue)
+
+}

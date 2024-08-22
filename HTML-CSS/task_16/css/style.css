@@ -65,7 +65,7 @@ header:hover {
 .two div {
   text-align: center;
   flex-direction: column;
-  width: 400px;
+  /* width: 400px; */
   padding: 0 50px;
   display: flex;
   justify-content: space-evenly;
@@ -167,5 +167,5 @@ header:hover {
 
 }
 .boxthree h2{
-    font-size: 160px;
+    font-size: 140px;
 }
