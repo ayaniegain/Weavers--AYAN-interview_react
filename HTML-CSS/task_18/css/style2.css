@@ -8,6 +8,16 @@
   margin: 0 auto;
 }
 
+input[type="radio"] {
+  width: 12px;
+  height: 12px;
+}
+
+input[type="radio"]:checked {
+  accent-color: black;
+}
+
+
 .float-container{
   background-color:#FF8F00;
   border-radius: 50%;
