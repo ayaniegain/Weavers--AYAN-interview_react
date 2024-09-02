@@ -1,0 +1,304 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+}
+
+.nav,
+footer {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  padding: 2px 40px;
+  align-items: center;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.left h4 {
+  color: orange;
+  text-align: center;
+  border-bottom: 3px solid orange;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sub-1 ul {
+  display: flex;
+  list-style-type: none;
+  width: 200px;
+  justify-content: space-around;
+  color: rgb(119, 101, 101);
+}
+.sub-2 img {
+  height: 20px;
+  width: 20px;
+}
+
+.hero {
+  height: 500px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/cover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(8px);
+  z-index: 1;
+  background-position: center;
+}
+
+.hero-sec {
+  color: white;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+  position: absolute;
+  z-index: 100;
+  top: 60px;
+  left: 50px;
+}
+
+.hero-sec h2 {
+  font-size: 38px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+button {
+  background-color: orange;
+  width: 200px;
+  padding: 10px;
+}
+
+/* -------about section */
+
+.about {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  flex-wrap: wrap;
+}
+
+.about .about-one {
+  height: 300px;
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-direction: column;
+}
+
+.about-btn {
+  background-color: white;
+  border-radius: 10px;
+  width: 120px;
+}
+
+.about h2 {
+  font-size: 32px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.about img {
+  height: 300px;
+  width: 550px;
+  box-shadow: 10px 20px 10px grey;
+  border: 2px white solid;
+  opacity: 88%;
+}
+
+.text {
+  height: 200px;
+  background-color: rgb(8, 27, 51);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-content {
+  font-size: 20px;
+  width: 700px;
+  text-align: center;
+  color: white;
+}
+
+/* ---------img container-------- */
+
+.img-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.img-container img {
+  height: 300px;
+  width: 100%;
+  box-shadow: 10px 10px 10px rgb(248, 226, 170);
+  opacity: 84%;
+}
+.img-container button {
+  background-color: white;
+  border-radius: 10px;
+  width: 80px;
+  font-size: 10px;
+}
+.img-container p {
+  font-size: 12px;
+}
+.img-container h2 {
+  font-size: 24px;
+  letter-spacing: 8px;
+}
+
+.img-one,
+.img-two,
+.img-three {
+  height: 420px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form {
+  height: 500px;
+  width: 100%;
+  background-color: rgb(8, 27, 51);
+  color: white;
+  display: flex;
+  padding: 0 80px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.form-one h2 {
+  font-size: 30px;
+  font-family: monospace;
+}
+.form-one p {
+  padding-top: 6px;
+  letter-spacing: 2px;
+}
+
+input[type="text"] {
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgb(68, 69, 110);
+}
+.form-one {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+  width: 50%;
+}
+.form-two {
+  width: 50%;
+  height: 300px;
+
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.form-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+.form-row div {
+  width: 48%;
+}
+
+input[type="area"] {
+  height: 250px;
+  width: 100%;
+  background-color: rgb(68, 69, 110);
+}
+
+@media screen and (max-width: 792px) {
+  .nav {
+    height: 100px;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-sec {
+    width: 60%;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .form-one {
+    width: 100%;
+  }
+  .form-two {
+    width: 100%;
+  }
+
+  input[type="area"] {
+    height: 150px;
+    width: 100%;
+  }
+
+  .about img {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .nav {
+    height: 100px;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .right {
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .about img {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+  }
+  .text-content {
+    font-size: 16px;
+  }
+}
