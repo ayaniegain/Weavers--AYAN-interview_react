@@ -283,7 +283,7 @@ ul {
   box-shadow: 2px 2px 20px var(--gray);
 }
 .product-one {
-  background: url(/assets/bird-0.webp);
+  background: url(../assets/bird-0.webp);
   height: 270px;
   width: 270px;
   position: relative;
@@ -292,7 +292,7 @@ ul {
 }
 
 .product-two {
-  background: url(/assets/bird-1.webp);
+  background: url(../assets/bird-1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -301,7 +301,7 @@ ul {
 }
 
 .product-three {
-  background: url(/assets/bird-2.webp);
+  background: url(../assets/bird-2.webp);
   height: 270px;
   width: 270px;
   position: relative;
@@ -309,7 +309,7 @@ ul {
   background-repeat: no-repeat;
 }
 .product-four {
-  background: url(/assets/bird-3.jpg);
+  background: url(../assets/bird-3.jpg);
   height: 270px;
   width: 270px;
   position: relative;
