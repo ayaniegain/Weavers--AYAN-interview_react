@@ -5,7 +5,7 @@ const checkFartoCel = () => {
 
   console.log(celTemp);
 
-  document.getElementById("result").innerHTML = `${celTemp} °  C`;
+  document.getElementById("result").innerHTML = `${farTemp}°F  as  ${celTemp}°C`;
   document.getElementById("input").value = "";
 };
 
@@ -16,11 +16,7 @@ checkCeltoFar = () => {
 
   console.log(farTemp);
 
-  document.getElementById("result").innerHTML = `${farTemp} °  F`;
+  document.getElementById("result").innerHTML = `${celTemp}°C as ${farTemp} °F`;
   document.getElementById("input").value = "";
 };
-
-for (const element of object) {
-    
-}
 
