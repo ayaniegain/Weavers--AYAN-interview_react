@@ -291,6 +291,23 @@ ul {
   background-repeat: no-repeat;
 }
 
+
+.product-one::before {
+  content: "";
+  /* background-color: blue; */
+  opacity:0.5;
+  height: 270px;
+  width: 270px;
+  position: absolute;
+  top:0px;
+  left:0px;
+  bottom:0px;
+  right:0px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
 .product-two {
   background: url(../assets/bird-1.webp);
   background-repeat: no-repeat;
@@ -347,6 +364,7 @@ ul {
   gap: 30px;
   align-items: center;
   visibility: hidden;
+  z-index: 2;
 }
 .product-hover-text img {
   height: 30px;

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F to C</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- C = (°F - 32) × 5/9 -->
+    <!-- °F = °C × (9/5) + 32 -->
+    <div class="container">
+      <section>
+        <h4>Temp Converter</h4>
+        <input type="number" placeholder="write value" id="input" />
+        <aside>
+          <button onclick="checkFartoCel()">Check F to C</button>
+          <button onclick="checkCeltoFar()">Check C to F</button>
+        </aside>
+
+        <p id="result"></p>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

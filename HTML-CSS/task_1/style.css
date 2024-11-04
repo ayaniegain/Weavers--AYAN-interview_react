@@ -5,10 +5,10 @@
 }
 body{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .main-table{
- width: 600px;    
+ width: 700px;    
  height: 600px;
 }
 
@@ -21,6 +21,7 @@ body{
     font-weight: bold;
     
 }
+
 .weekday{
     background-color: rgb(57, 227, 27);
 }
