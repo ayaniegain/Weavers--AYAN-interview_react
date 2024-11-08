@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h3 {
+  color: white;
+  text-align: center;
+  font-size: 22px;
+}
+
+#form-container p{
+
+    color: orange;
+    text-align: center;
+
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  gap: 40px;
+  background-image: url("./background-img.jpg");
+  background-size: cover;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 30%;
+  background-color: #021526;
+  opacity: 0.8;
+  height: 85%;
+  box-shadow: 0px 0px 20px 5px #3b185f;
+  padding: 50px;
+}
+
+label {
+  font-size: 1.3rem;
+  color: white;
+  padding-top: 4px;
+}
+
+#first_name,
+#last_name,
+#email {
+  height: 25px;
+  width: 80%;
+
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+#age {
+  height: 25px;
+  width: 10%;
+  padding-left: 5px;
+}
+
+#phone {
+  width: 40%;
+  height: 30px;
+
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.first-div,
+.second-div,
+.third-div {
+  display: flex;
+  gap: 10px;
+}
+
+.fourth-div {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap;  */
+  gap: 6px;
+}
+
+.fourth-div label {
+  font-size: 16px;
+}
+
+.second-div select {
+  width: 200px;
+}
+
+#btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  gap: 10px;
+}
+
+#btn-container button {
+  height: 30px;
+  width: 100px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgb(211, 197, 244);
+  border: none;
+
+}
+
+#btn-container button:hover {
+  background-color: aquamarine;
+  color: black;
+}
+
+/* ---------------TABLE-------------- */
+
+#table-container {
+  background-color: #395b64;
+
+  /* width: 50%; */
+  height: 75%;
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  
+}
+#filter-btn-container{
+
+    display: flex;
+    gap: 20px;
+   
+}
+#filter-btn-container button{
+
+    height: 26px;
+    width: 120px;
+
+}
+#filter-btn-container button:hover{
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+th {
+  text-align: center;
+}
+
+thead {
+  th {
+    background-color: #55608f;
+  }
+}
+
+tbody {
+  tr {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  td {
+    position: relative;
+    &:hover {
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -9999px;
+        bottom: -9999px;
+        background-color: rgba(255, 255, 255, 0.2);
+        z-index: -1;
+      }
+    }
+  }
+}

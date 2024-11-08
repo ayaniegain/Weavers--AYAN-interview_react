@@ -5,7 +5,9 @@ const handleClick = () => {
 
   console.log(getValue);
   if (isNaN(getValue) || getValue === "" || getValue <= 0) {
-    document.getElementById("table").innerHTML = "give some value";
+    document.getElementById("table").innerHTML = "Give proper Input";
+    document.getElementById("table").style.fontSize = "30px";
+    document.getElementById("heading").innerHTML = ``;
 
     return;
   }
@@ -18,10 +20,12 @@ const handleClick = () => {
     let result = getValue * i;
 
     let node = document.createElement("li");
-    let textNode = document.createTextNode(` ${getValue} x ${i} =${result}`);
+    let textNode = document.createTextNode(`${getValue} x ${i} =${result}`);
     node.appendChild(textNode);
 
     document.getElementById("table").appendChild(node);
+
+    // document.getElementById("table").innerHTML+=` ${getValue} x ${i} =${result} <br>`
   }
 
   document.getElementById("input").value = "";
