@@ -9,119 +9,100 @@
   <body>
     <div id="container">
       <section id="form-container">
-    <h3>Student Registration Form</h3>
-          <label>First Name</label>
-          <input type="text" id="first_name" placeholder="first name"/>
-          <label>Last Name</label>
-          <input type="text" id="last_name" placeholder="last name"/>
-          <label>Email</label>
-          <input type="email" id="email" placeholder="email"/>
-          <div class="first-div">
-          
+        <h3>Student Registration Form</h3>
+        <label>First Name</label>
+        <input type="text" id="first_name" placeholder="first name" />
+        <label>Last Name</label>
+        <input type="text" id="last_name" placeholder="last name" />
+        <label>Email</label>
+        <input type="email" id="email" placeholder="email" />
+        <div class="first-div">
           <label>Age</label>
-          <input type="number" id="age" placeholder="age"/>
-        <label>Phone</label>
-        <input type="number" id="phone" placeholder="phone"/>
-      </div>
-      <div class="second-div">
-        <label for="school">Select School</label>
-        
-        <select name="school" id="school">
-          <option value="weavers">Weavers</option>
-          <option value="other">Other</option>
-          
-        </select>
-      </div>
-      <label for="">Gender</label>
-      <div class="third-div">
-        
-        <input type="radio" name="gender" id="male" value="male">
-        <label for="male">Male</label><br>
-        
-        <input type="radio" name="gender" id="female" value="female">
-        <label for="female">Female</label><br>
-      </div>
-      
-      <label>Choose Course</label>
-    
-      <div class="fourth-div">
-          <input type="checkbox" id="mern" name="mern" value="mern">
-          <label for="mern"> MERN</label>
-          
-          <input type="checkbox" id="react" name="react" value="react">
-          <label for="react"> REACT</label><br>
-          
-          <input type="checkbox" id="nodejs" name="nodejs" value="nodejs">
-          <label for="nodejs"> NODE-JS</label>
-       
-
-            <input type="checkbox" id="reactnative" name="reactnative" value="reactnative">
-            <label for="reactnative"> REACT NATIVE</label><br>
-            
-            <input type="checkbox" id="php" name="php" value="php">
-            <label for="php"> PHP</label>
+          <input type="number" id="age" placeholder="age" />
+          <label>Phone</label>
+          <input type="number" id="phone" placeholder="phone" />
         </div>
-        
-        <section id="btn-container">
-          <button onclick="handleClick()">Submit</button>
-          <button onclick="showTable()">Show Table</button>
-        </section>
-        
-        <p id="loading_error"> submit proper input</p>
-      
-      </section>
+        <div class="second-div">
+          <label for="school">Select School</label>
 
-        
+          <select name="school" id="school">
+            <option value="weavers">Weavers</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <label for="gender">Gender</label>
+        <div class="third-div">
+          <input type="radio" name="gender" id="male" value="male" />
+          <label for="male">Male</label><br />
+
+          <input type="radio" name="gender" id="female" value="female" />
+          <label for="female">Female</label><br />
+        </div>
+
+        <label>Choose Course</label>
+
+        <div class="fourth-div">
+          <input type="checkbox" id="mern" name="mern" value="mern" />
+          <label for="mern"> MERN</label>
+
+          <input type="checkbox" id="react" name="react" value="react" />
+          <label for="react"> REACT</label><br />
+
+          <input type="checkbox" id="nodejs" name="nodejs" value="nodejs" />
+          <label for="nodejs"> NODE-JS</label>
+
+          <input
+            type="checkbox"
+            id="reactnative"
+            name="reactnative"
+            value="reactnative"
+          />
+          <label for="reactnative"> REACT NATIVE</label><br />
+
+          <input type="checkbox" id="php" name="php" value="php" />
+          <label for="php"> PHP</label>
+        </div>
+
+        <section id="btn-container">
+          <button onclick="handleClick()" id="submit_btn">Submit</button>
+          <button onclick="showTable()" id="show_table" disabled>
+            Show Table
+          </button>
+        </section>
+
+        <p id="loading_error"></p>
+      </section>
 
       <section id="table-container">
         <div id="filter-btn-container">
-
-          <button>sort by name</button>
-          <button>sort by Age</button>
-          <button>sort by gender</button>
-          <button>Above 25 age</button>
+          <button onclick="sortByName()" id="show_btn1" disabled>
+            Sort by Name
+          </button>
+          <button onclick="sortByAge()" id="show_btn2" disabled>
+            Sort by Age
+          </button>
+          <button onclick="filterAge()" id="show_btn3" disabled>
+            Above 25 Age
+          </button>
+          <button onclick="resetTable()" id="show_btn4" disabled>
+            Reset Table
+          </button>
         </div>
-          <table>
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Full Name</th>
-                <th>Email</th>
-                <th>Age </th> 
-                <th>Phone </th>
-                <th>Gender </th>
-                <th>School </th>
-                <th>Course </th>
-                <th>Action </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Ayan Biswas</td>
-                <td>ayan@gmail.com</td>
-                <td>25</td>
-                <td>9066357988</td>
-                <td>Male</td>
-                <td>Weavers</td>
-                <td>Mern</td>
-                <td>❌</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Tapan Lal</td>
-                <td>Tapan@gmail.com</td>
-                <td>21</td>
-                <td>8908674388</td>
-                <td>Male</td>
-                <td>Other</td>
-                <td>React</td>
-                <td>❌</td>
-              </tr>
-            </tbody>
-          </table>
-
-    
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Phone</th>
+              <th>Gender</th>
+              <th>School</th>
+              <th>Course</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </section>
     </div>
     <script src="./script.js"></script>

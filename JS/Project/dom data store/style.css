@@ -123,7 +123,7 @@ label {
 #table-container {
   background-color: #395b64;
 
-  /* width: 50%; */
+  width: 50%;
   height: 75%;
   display: flex;
   gap: 10px;
