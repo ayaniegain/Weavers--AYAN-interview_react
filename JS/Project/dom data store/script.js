@@ -106,6 +106,12 @@ function handleClick() {
   school.value = "";
   document.querySelector('input[name="gender"]:checked').checked = false;
   selectedCheckboxes.forEach((checkbox) => (checkbox.checked = false));
+
+
+  if (showAllButton) {
+    showTable()
+    
+  }
 }
 
 

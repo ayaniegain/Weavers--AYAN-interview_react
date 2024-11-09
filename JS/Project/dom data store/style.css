@@ -157,7 +157,7 @@ cursor: pointer;
 /* ---------------TABLE CONTAINER-------------- */
 #table-container {
   background-color: #395b64;
-  width: 50%;
+  width: 60%;
   height: 75%;
   display: flex;
   flex-direction: column;
