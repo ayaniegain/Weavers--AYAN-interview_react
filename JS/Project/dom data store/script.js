@@ -11,6 +11,9 @@ let phone = document.querySelector("#phone");
 let school = document.querySelector("#school");
 let loadingError = document.getElementById("loading_error");
 let tbodyTag = document.querySelector("tbody");
+tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
+
+
 
 function handleClick() {
   const firstnameValue = firstname.value.trim();
@@ -115,6 +118,8 @@ function handleClick() {
 }
 
 
+
+
 function showTable(data = storeArray) {
   loadingError.innerHTML = "";
   showAllButton = true;
@@ -124,12 +129,13 @@ function showTable(data = storeArray) {
   
   console.log(showAllButton)
 
-  if (data.length === 0) {
+  if (data.length === 0 ) {
     tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
     return;
   }
 
   tbodyTag.innerHTML = "";
+
 
   data.forEach((user) => {
     const { id, fullName, email, age, phone, gender, school, course } = user;
