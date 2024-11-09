@@ -1,39 +1,7 @@
 let storeArray = [];
-let myObj = {};
 let currentId = 1;
+let showAllButton = false;
 
-// let storeArrays = [
-//   {
-//     id: 1,
-//     fullName: "Ayan Biswas",
-//     email: "ayan@gmail.com",
-//     age: 25,
-//     phone: "9066357988",
-//     gender: "Male",
-//     school: "Weavers",
-//     course: ["android", "js", "Node.js"],
-//   },
-//   {
-//     id: 2,
-//     fullName: "zayd Doe",
-//     email: "john.doe@example.com",
-//     age: 30,
-//     phone: "9876543210",
-//     gender: "Male",
-//     school: "Other",
-//     course: ["Mern", "React", "Node.js"],
-//   },
-//   {
-//     id: 3,
-//     fullName: "john Smith",
-//     email: "jane.smith@example.com",
-//     age: 28,
-//     phone: "9123456789",
-//     gender: "Female",
-//     school: "Weavers",
-//     course: ["Angular", "TypeScript"],
-//   },
-// ];
 
 let firstname = document.querySelector("#first_name");
 let lastname = document.querySelector("#last_name");
@@ -51,15 +19,9 @@ function handleClick() {
   const ageValue = age.value.trim();
   const phoneValue = phone.value.trim();
   const schoolValue = school.value;
-  const genderValue = document.querySelector(
-    'input[name="gender"]:checked'
-  )?.value;
-  const selectedCheckboxes = document.querySelectorAll(
-    '.fourth-div input[type="checkbox"]:checked'
-  );
-  const course = Array.from(selectedCheckboxes).map(
-    (checkbox) => checkbox.value
-  );
+  const genderValue = document.querySelector('input[name="gender"]:checked')?.value;
+  const selectedCheckboxes = document.querySelectorAll('.fourth-div input[type="checkbox"]:checked');
+  const course = Array.from(selectedCheckboxes).map((checkbox) => checkbox.value);
 
   // Validation message container
   loadingError.innerHTML = "";
@@ -69,14 +31,12 @@ function handleClick() {
 
   // Validation for each field
   if (firstnameValue === "" || firstnameValue.length < 4) {
-    loadingError.innerHTML +=
-      "* First name should not be blank and must be at least 4 characters.<br>";
+    loadingError.innerHTML += "* First name should not be blank and must be at least 4 characters.<br>";
     hasError = true;
   }
 
   if (lastnameValue === "" || lastnameValue.length < 4) {
-    loadingError.innerHTML +=
-      "* Last name should not be blank and must be at least 4 characters.<br>";
+    loadingError.innerHTML += "* Last name should not be blank and must be at least 4 characters.<br>";
     hasError = true;
   }
 
@@ -86,8 +46,7 @@ function handleClick() {
   }
 
   if (ageValue === "" || isNaN(ageValue) || ageValue < 18 || ageValue > 100) {
-    loadingError.innerHTML +=
-      "* Age should be a number between 18 and 100.<br>";
+    loadingError.innerHTML += "* Age should be a number between 18 and 100.<br>";
     hasError = true;
   }
 
@@ -118,15 +77,12 @@ function handleClick() {
 
   let fullName = `${firstnameValue} ${lastnameValue}`;
 
-  //unique id generatuion
-  // let id = Math.floor(Math.random() * 90) + 10;
-
   let id = currentId;
   currentId++;
 
   loadingError.innerHTML = "Form submitted successfully!";
 
-  myObj = {
+  let myObj = {
     id,
     fullName,
     email: emailValue,
@@ -141,7 +97,7 @@ function handleClick() {
 
   disabledBtnFunc();
 
-  // Clear form inputs after successful submissiona
+  //clear form
   firstname.value = "";
   lastname.value = "";
   email.value = "";
@@ -152,45 +108,21 @@ function handleClick() {
   selectedCheckboxes.forEach((checkbox) => (checkbox.checked = false));
 }
 
-function disabledBtnFunc() {
-  if (storeArray.length >= 1) {
-    let showTable = document.getElementById("show_table");
-
-    let enableBtn1 = document.getElementById("show_btn1");
-    let enableBtn2 = document.getElementById("show_btn2");
-    let enableBtn3 = document.getElementById("show_btn3");
-    let enableBtn4 = document.getElementById("show_btn4");
-
-    showTable.disabled = false;
-    enableBtn1.disabled = false;
-    enableBtn2.disabled = false;
-    enableBtn3.disabled = false;
-    enableBtn4.disabled = false;
-  }
-  if (storeArray.length === 0) {
-    let showTable = document.getElementById("show_table");
-
-    let enableBtn1 = document.getElementById("show_btn1");
-    let enableBtn2 = document.getElementById("show_btn2");
-    let enableBtn3 = document.getElementById("show_btn3");
-    let enableBtn4 = document.getElementById("show_btn4");
-
-    showTable.disabled = true;
-    enableBtn1.disabled = true;
-    enableBtn2.disabled = true;
-    enableBtn3.disabled = true;
-    enableBtn4.disabled = true;
-  }
-}
 
 function showTable(data = storeArray) {
   loadingError.innerHTML = "";
+  showAllButton = true;
+
+  disabledBtnFunc()
+  
+  
+  console.log(showAllButton)
 
   if (data.length === 0) {
     tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
-
     return;
   }
+
   tbodyTag.innerHTML = "";
 
   data.forEach((user) => {
@@ -208,8 +140,6 @@ function showTable(data = storeArray) {
       </tr>`;
   });
 }
-
-showTable(storeArray);
 
 function filterAge() {
   let filterAge = storeArray.filter((item) => item.age > 25);
@@ -231,6 +161,43 @@ function sortByName() {
 function resetTable() {
   storeArray.length = 0;
   tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
-
+  showAllButton=false
   disabledBtnFunc();
+
+}
+
+
+
+function disabledBtnFunc() {
+
+
+  let showTable = document.getElementById("show_table");
+  let enableBtn1 = document.getElementById("show_btn1");
+  let enableBtn2 = document.getElementById("show_btn2");
+  let enableBtn3 = document.getElementById("show_btn3");
+  let enableBtn4 = document.getElementById("show_btn4");
+  
+  if (storeArray.length >= 1) {
+    showTable.disabled = false;
+    
+  } else {
+    showTable.disabled = true;
+   
+  }
+  console.log(showAllButton)
+
+  if (showAllButton) {
+ enableBtn1.disabled = false;
+    enableBtn2.disabled = false;
+    enableBtn3.disabled = false;
+    enableBtn4.disabled = false;
+  }else{
+    enableBtn1.disabled = true;
+    enableBtn2.disabled = true;
+    enableBtn3.disabled = true;
+    enableBtn4.disabled = true;
+  }
+
+
+
 }

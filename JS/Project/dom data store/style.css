@@ -1,160 +1,186 @@
+/* Universal Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
+
+/* Body Styles */
+body {
+  background-image: url("./background-img.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+/* Header Styles */
 h3 {
-  color: white;
+  color: #e3e3e3;
   text-align: center;
-  font-size: 22px;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
 }
 
-#form-container p{
-
-    color: orange;
-    text-align: center;
-
-}
-
+/* Container Styles */
 #container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 100vh;
-  width: 100%;
-  gap: 40px;
-  background-image: url("./background-img.jpg");
-  background-size: cover;
+  padding: 20px;
+  gap: 30px;
 }
 
+/* Form Container Styles */
 #form-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  width: 30%;
-  background-color: #021526;
-  opacity: 0.8;
-  height: 85%;
+  align-items: center;
+  width: 35%;
+  background-color: rgba(2, 21, 38, 0.9);
+  padding: 40px;
+  border-radius: 8px;
   box-shadow: 0px 0px 20px 5px #3b185f;
-  padding: 50px;
 }
 
+/* Paragraph Styles within Form Container */
+#form-container p {
+  color: orange;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Label Styles */
 label {
-  font-size: 1.3rem;
-  color: white;
-  padding-top: 4px;
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-top: 10px;
+  align-self: flex-start;
 }
 
-#first_name,
-#last_name,
-#email {
-  height: 25px;
-  width: 80%;
-
-  padding-left: 20px;
-  font-size: 16px;
+/* Input and Select Styles */
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  height: 35px;
+  margin-top: 5px;
+  padding-left: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
 }
 
-#age {
-  height: 25px;
-  width: 10%;
-  padding-left: 5px;
-}
-
-#phone {
-  width: 40%;
-  height: 30px;
-
+input[type="number"] {
+  height: 35px;
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
 }
 
+/* Specific Styles for Age Input */
+#age {
+  width: 60px; /* Adjusted width for Age input */
+}
+
+/* Focus Styles for Inputs and Select */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border: 2px solid #00c8ff;
+  box-shadow: 0 0 5px rgba(0, 200, 255, 0.5);
+}
+
+/* Flex Containers for Form Rows */
 .first-div,
 .second-div,
-.third-div {
-  display: flex;
-  gap: 10px;
-}
-
-.fourth-div {
-  max-width: 400px;
+.third-div { /* Changed from .third_div to .third-div for consistency */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* flex-wrap: wrap;  */
-  gap: 6px;
+  gap: 20px;
+  margin-top: 12px;
+}
+.second-div,
+.third_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  gap: 10px; /* Reduced gap for better spacing */
 }
 
-.fourth-div label {
-  font-size: 16px;
+/* Specific styling for input labels within .third_div */
+.third_div label {
+  margin: 0; /* Remove default margin */
+  color: #cccccc; /* Adjust color if needed */
 }
 
-.second-div select {
-  width: 200px;
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 8px;
 }
 
+/* Button Container Styles */
 #btn-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-top: 10px;
   gap: 10px;
+  margin-top: 20px;
 }
 
-#btn-container button {
-  height: 30px;
-  width: 100px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: rgb(211, 197, 244);
-  border: none;
+/* Button Styles */
+#btn-container button , 
+#filter-btn-container button 
 
+
+{
+  height: 35px;
+  width: 100px;
+  font-size: 1rem;
+cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #d4e0e9;
+  transition: background-color 0.3s ease;
 }
 
 #btn-container button:hover {
-  background-color: aquamarine;
-  color: black;
+  background-color: #5fa8d3;
 }
 
-/* ---------------TABLE-------------- */
-
+/* ---------------TABLE CONTAINER-------------- */
 #table-container {
   background-color: #395b64;
-
   width: 50%;
   height: 75%;
   display: flex;
-  gap: 10px;
-  padding-top: 10px;
   flex-direction: column;
-  justify-items: center;
+  justify-content: flex-start;
   align-items: center;
-  
+  gap: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
-#filter-btn-container{
 
-    display: flex;
-    gap: 20px;
-   
-}
-#filter-btn-container button{
-
-    height: 26px;
-    width: 120px;
-
-}
-#filter-btn-container button:hover{
-    background-color: aquamarine;
-    cursor: pointer;
+#filter-btn-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
 }
 
 
+
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
-  overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -163,37 +189,15 @@ td {
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
-}
-
-th {
   text-align: center;
+  position: relative; /* Needed for the ::before pseudo-element */
 }
 
-thead {
-  th {
-    background-color: #55608f;
-  }
+thead th {
+  background-color: #55608f;
 }
 
-tbody {
-  tr {
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-  }
-  td {
-    position: relative;
-    &:hover {
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: -9999px;
-        bottom: -9999px;
-        background-color: rgba(255, 255, 255, 0.2);
-        z-index: -1;
-      }
-    }
-  }
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
+
