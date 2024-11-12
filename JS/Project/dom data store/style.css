@@ -6,12 +6,33 @@
   font-family: Arial, sans-serif;
 }
 
+/* Background overlay to handle background images */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+  z-index: -1; 
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+
+}
+
+
+
+
 /* Body Styles */
 body {
-  background-image: url("./background-img.jpg");
   background-size: cover;
   background-position: center;
   color: #ffffff;
+  transition: opacity 0.5s ease-in-out;
+  /* background-color: black; */
+  background-image: url("./pic.jpg");
 }
 
 /* Header Styles */
@@ -39,10 +60,12 @@ h3 {
   flex-direction: column;
   align-items: center;
   width: 35%;
-  background-color: rgba(2, 21, 38, 0.9);
+  background-color: rgba(2, 21, 38, 0.7);
   padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 20px 5px #3b185f;
+  border-radius: 4px;
+  /* box-shadow: 0px 0px 20px 5px #3b185f; */
+  box-shadow: 0 0 30px rgba(241, 233, 233, 0.3);
+
 }
 
 /* Paragraph Styles within Form Container */
@@ -93,7 +116,7 @@ input[type="number"]:focus,
 select:focus {
   outline: none;
   border: 2px solid #00c8ff;
-  box-shadow: 0 0 5px rgba(0, 200, 255, 0.5);
+  /* box-shadow: 0 0 5px rgba(0, 200, 255, 0.5); */
 }
 
 /* Flex Containers for Form Rows */
@@ -142,7 +165,7 @@ input[type="checkbox"] {
 {
   height: 35px;
   width: 100px;
-  font-size: 1rem;
+  font-size: 0.9rem;
 cursor: pointer;
   border: none;
   border-radius: 5px;
@@ -156,9 +179,10 @@ cursor: pointer;
 
 /* ---------------TABLE CONTAINER-------------- */
 #table-container {
-  background-color: #395b64;
+  /* border: 4px white solid; */
+  /* background-color: #395b64; */
   width: 60%;
-  height: 75%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -166,7 +190,7 @@ cursor: pointer;
   gap: 15px;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(241, 233, 233, 0.3);
 }
 
 #filter-btn-container {

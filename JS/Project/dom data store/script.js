@@ -2,7 +2,6 @@ let storeArray = [];
 let currentId = 1;
 let showAllButton = false;
 
-
 let firstname = document.querySelector("#first_name");
 let lastname = document.querySelector("#last_name");
 let email = document.querySelector("#email");
@@ -13,8 +12,6 @@ let loadingError = document.getElementById("loading_error");
 let tbodyTag = document.querySelector("tbody");
 tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
 
-
-
 function handleClick() {
   const firstnameValue = firstname.value.trim();
   const lastnameValue = lastname.value.trim();
@@ -22,24 +19,29 @@ function handleClick() {
   const ageValue = age.value.trim();
   const phoneValue = phone.value.trim();
   const schoolValue = school.value;
-  const genderValue = document.querySelector('input[name="gender"]:checked')?.value;
-  const selectedCheckboxes = document.querySelectorAll('.fourth-div input[type="checkbox"]:checked');
-  const course = Array.from(selectedCheckboxes).map((checkbox) => checkbox.value);
+  const genderValue = document.querySelector(
+    'input[name="gender"]:checked'
+  )?.value;
+  const selectedCheckboxes = document.querySelectorAll(
+    '.fourth-div input[type="checkbox"]:checked'
+  );
+  const course = Array.from(selectedCheckboxes).map(
+    (checkbox) => checkbox.value
+  );
 
-  // Validation message container
   loadingError.innerHTML = "";
 
-  // Error handling flag
   let hasError = false;
 
-  // Validation for each field
   if (firstnameValue === "" || firstnameValue.length < 4) {
-    loadingError.innerHTML += "* First name should not be blank and must be at least 4 characters.<br>";
+    loadingError.innerHTML +=
+      "* First name should not be blank and must be at least 4 characters.<br>";
     hasError = true;
   }
 
   if (lastnameValue === "" || lastnameValue.length < 4) {
-    loadingError.innerHTML += "* Last name should not be blank and must be at least 4 characters.<br>";
+    loadingError.innerHTML +=
+      "* Last name should not be blank and must be at least 4 characters.<br>";
     hasError = true;
   }
 
@@ -49,7 +51,8 @@ function handleClick() {
   }
 
   if (ageValue === "" || isNaN(ageValue) || ageValue < 18 || ageValue > 100) {
-    loadingError.innerHTML += "* Age should be a number between 18 and 100.<br>";
+    loadingError.innerHTML +=
+      "* Age should be a number between 18 and 100.<br>";
     hasError = true;
   }
 
@@ -96,6 +99,13 @@ function handleClick() {
     course,
   };
 
+  let duplicateEntry = checkDuplicateEntry(emailValue, phoneValue);
+
+  if (duplicateEntry) {
+    loadingError.innerHTML = "Duplicate Email or Phone Present";
+    return;
+  }
+
   storeArray.push(myObj);
 
   disabledBtnFunc();
@@ -110,32 +120,33 @@ function handleClick() {
   document.querySelector('input[name="gender"]:checked').checked = false;
   selectedCheckboxes.forEach((checkbox) => (checkbox.checked = false));
 
-
   if (showAllButton) {
-    showTable()
-    
+    showTable();
   }
 }
 
+function checkDuplicateEntry(emailValue, phoneValue) {
+  let duplicateEmail = storeArray.some((e) => e.email === emailValue);
+  let duplicatePhone = storeArray.some((e) => e.phone === phoneValue);
 
-
+  return duplicateEmail || duplicatePhone;
+}
 
 function showTable(data = storeArray) {
   loadingError.innerHTML = "";
   showAllButton = true;
 
-  disabledBtnFunc()
-  
-  
-  console.log(showAllButton)
+  disabledBtnFunc();
 
-  if (data.length === 0 ) {
+
+  if (data.length === 0) {
     tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
     return;
   }
 
   tbodyTag.innerHTML = "";
 
+  // console.log(data);
 
   data.forEach((user) => {
     const { id, fullName, email, age, phone, gender, school, course } = user;
@@ -173,43 +184,51 @@ function sortByName() {
 function resetTable() {
   storeArray.length = 0;
   tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
-  showAllButton=false
+  showAllButton = false;
   disabledBtnFunc();
-
 }
 
-
-
 function disabledBtnFunc() {
-
-
   let showTable = document.getElementById("show_table");
   let enableBtn1 = document.getElementById("show_btn1");
   let enableBtn2 = document.getElementById("show_btn2");
   let enableBtn3 = document.getElementById("show_btn3");
   let enableBtn4 = document.getElementById("show_btn4");
-  
+
   if (storeArray.length >= 1) {
     showTable.disabled = false;
-    
   } else {
     showTable.disabled = true;
-   
   }
-  console.log(showAllButton)
 
   if (showAllButton) {
- enableBtn1.disabled = false;
+    enableBtn1.disabled = false;
     enableBtn2.disabled = false;
     enableBtn3.disabled = false;
     enableBtn4.disabled = false;
-  }else{
+  } else {
     enableBtn1.disabled = true;
     enableBtn2.disabled = true;
     enableBtn3.disabled = true;
     enableBtn4.disabled = true;
   }
-
-
-
 }
+
+
+let overlay = document.getElementById("backgroundOverlay");
+overlay.style.backgroundColor = "black";
+
+overlay.style.opacity = 0;
+
+overlay.style.transition = "opacity 1s ease, background-image 1s ease";
+
+setInterval(() => {
+  overlay.style.opacity = 0;
+
+  setTimeout(() => {
+    let randomImg = Math.floor(Math.random() * 5) + 1;
+    overlay.style.backgroundImage = `url("./img${randomImg}.jpg")`;
+
+    overlay.style.opacity = 1;
+  }, 1000); 
+}, 8000);
