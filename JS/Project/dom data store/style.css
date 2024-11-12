@@ -173,7 +173,10 @@ cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-#btn-container button:hover {
+#btn-container button:hover,
+#filter-btn-container button:hover
+
+{
   background-color: #5fa8d3;
 }
 
@@ -215,7 +218,7 @@ cursor: pointer;
 }
 
 
-#filter-name:hover{
+#filter-btn:hover{
   background-color: #00c8ff;
 }
 
@@ -248,7 +251,7 @@ td {
 }
 
 thead th {
-  background-color: #55608f;
+  background-color: #ec522b;
 }
 
 tbody tr:hover {

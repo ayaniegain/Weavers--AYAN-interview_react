@@ -1,4 +1,11 @@
-let storeArray = [];
+let data = (window.onload = () => {
+  return JSON.parse(localStorage.getItem("localStoreData"));
+});
+
+let storeData = data() !== null ? data() : [];
+
+console.log(storeData);
+
 let currentId = 1;
 let showAllButton = false;
 
@@ -10,7 +17,7 @@ let phone = document.querySelector("#phone");
 let school = document.querySelector("#school");
 let loadingError = document.getElementById("loading_error");
 let tbodyTag = document.querySelector("tbody");
-tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
+tbodyTag.innerHTML = `<tr><td colspan="9" style="text-align: center;">No data found in table</td></tr>`;
 
 function handleClick() {
   const firstnameValue = firstname.value.trim();
@@ -81,13 +88,14 @@ function handleClick() {
     return;
   }
 
-  let id = currentId;
-  currentId++;
-
-  loadingError.innerHTML = "Form submitted successfully!";
+  if (storeData.length > 0) {
+    currentId = storeData[storeData.length - 1].id + 1;
+  } else {
+    currentId = 1;
+  }
 
   let myObj = {
-    id,
+    id: currentId,
     firstname: firstnameValue,
     lastname: lastnameValue,
     email: emailValue,
@@ -105,9 +113,17 @@ function handleClick() {
     return;
   }
 
-  storeArray.push(myObj);
+  // -----------data save to local Strorage---------
 
-  disabledBtnFunc();
+  storeData.push(myObj);
+
+  localStorage.setItem("localStoreData", JSON.stringify(storeData));
+
+  location.reload();
+  console.log(storeData);
+
+  // disabledBtnFunc();
+  loadingError.innerHTML = "Form submitted successfully!";
 
   //clear form
   firstname.value = "";
@@ -120,25 +136,38 @@ function handleClick() {
   selectedCheckboxes.forEach((checkbox) => (checkbox.checked = false));
 
   if (showAllButton) {
+    // disabledBtnFunc();
+
+    console.log(showAllButton);
     showTable();
   }
 }
 
 function checkDuplicateEntry(emailValue, phoneValue) {
-  let duplicateEmail = storeArray.some((e) => e.email === emailValue);
-  let duplicatePhone = storeArray.some((e) => e.phone === phoneValue);
+  let duplicateEmail = storeData.some((e) => e.email === emailValue);
+  let duplicatePhone = storeData.some((e) => e.phone === phoneValue);
 
   return duplicateEmail || duplicatePhone;
 }
 
-function showTable(data = storeArray) {
-  loadingError.innerHTML = "";
-  showAllButton = true;
+////show
 
-  disabledBtnFunc();
+function showTable(data = storeData) {
+  loadingError.innerHTML = "";
+
+  if (data.length > 0) {
+    showAllButton = true;
+    // return;
+  } else {
+    showAllButton = false;
+  }
+
+  console.log(storeData);
+
+  // disabledBtnFunc();
 
   if (data.length === 0) {
-    tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
+    tbodyTag.innerHTML = `<tr><td colspan="9" style="text-align: center;">No data found in table</td></tr>`;
     return;
   }
 
@@ -146,7 +175,7 @@ function showTable(data = storeArray) {
 
   // console.log(data);
 
-  data.forEach((user) => {
+  data.forEach((user, index) => {
     const {
       id,
       firstname,
@@ -168,31 +197,40 @@ function showTable(data = storeArray) {
       <td>${gender}</td>
       <td>${school}</td>
       <td>${course.join(", ")}</td>
+      <td id="delete" onclick="deleteITem(${id})">❌</td>
       </tr>`;
   });
 }
 
+showTable(storeData);
+
 function filterAge() {
-  let filterAge = storeArray.filter((item) => item.age > 25);
+  let filterAge = storeData.filter((item) => item.age > 25);
   showTable(filterAge);
 }
 
 function sortByAge() {
-  let sortByAge = [...storeArray].sort((a, b) => a.age - b.age);
+  let sortByAge = [...storeData].sort((a, b) => a.age - b.age);
   showTable(sortByAge);
 }
 
 function sortByName() {
-  const sortedByName = [...storeArray].sort((a, b) =>
-    a.fullName.localeCompare(b.fullName)
+  const sortedByName = [...storeData].sort((a, b) =>
+    a.firstname.localeCompare(b.firstname)
   );
   showTable(sortedByName);
 }
 
 function resetTable() {
-  storeArray.length = 0;
-  tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
+  let showBtntn4 = document.getElementById("show_btn4");
+
+  storeData.length = 0;
+  tbodyTag.innerHTML = `<tr><td colspan="9" style="text-align: center;">No data found in table</td></tr>`;
   showAllButton = false;
+  localStorage.removeItem("localStoreData");
+  showBtntn4.style.backgroundColor = "";
+  showBtntn4.style.color = "";
+
   disabledBtnFunc();
 }
 
@@ -201,7 +239,7 @@ function filterbyName() {
     .getElementById("input-filtered-field")
     .value.toLowerCase();
 
-  const newFilteredList = storeArray.filter(
+  const newFilteredList = storeData.filter(
     (item) =>
       item.firstname.toLowerCase() === inputTextFilter ||
       item.lastname.toLowerCase() === inputTextFilter
@@ -214,6 +252,19 @@ function filterbyName() {
   document.getElementById("input-filtered-field").value = "";
 }
 
+function deleteITem(id) {
+  let getAlllocalItems = JSON.parse(localStorage.getItem("localStoreData"));
+
+
+  let getmatchItem = getAlllocalItems.filter((e) => e.id != id);
+
+  console.log(getmatchItem);
+
+  localStorage.setItem("localStoreData", JSON.stringify(getmatchItem));
+
+  location.reload();
+}
+
 function disabledBtnFunc() {
   let showTable = document.getElementById("show_table");
   let enableBtn1 = document.getElementById("show_btn1");
@@ -224,13 +275,15 @@ function disabledBtnFunc() {
   let filterBtn = document.getElementById("filter-btn");
   let showBtntn4 = document.getElementById("show_btn4");
 
-  if (storeArray.length >= 1) {
+  if (storeData.length >= 1) {
+    console.log(storeData);
     showTable.disabled = false;
   } else {
     showTable.disabled = true;
   }
 
   if (showAllButton) {
+    console.log(showAllButton);
     enableBtn1.disabled = false;
     enableBtn2.disabled = false;
     enableBtn3.disabled = false;
@@ -250,6 +303,7 @@ function disabledBtnFunc() {
     filterBtn.disabled = true;
   }
 }
+disabledBtnFunc();
 
 let overlay = document.getElementById("backgroundOverlay");
 overlay.style.backgroundColor = "black";

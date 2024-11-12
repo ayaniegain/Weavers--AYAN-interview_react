@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-   
     <div class="background-overlay" id="backgroundOverlay"></div>
     <div id="container">
       <section id="form-container">
@@ -34,18 +33,17 @@
         </div>
         <div class="third_div">
           <label for="gender">Gender:</label>
-        
+
           <div>
             <input type="radio" name="gender" id="male" value="male" />
             <label for="male">Male</label>
           </div>
-        
+
           <div>
             <input type="radio" name="gender" id="female" value="female" />
             <label for="female">Female</label>
           </div>
         </div>
-        
 
         <label>Choose Course</label>
 
@@ -97,10 +95,18 @@
           </button>
         </div>
 
-          <div class="input-field">
-            <input type="text" name="" id="input-filtered-field" placeholder="enter name" disabled>
-            <button id="filter-btn" onclick="filterbyName()" disabled>filter by name</button>
-          </div>
+        <div class="input-field">
+          <input
+            type="text"
+            name=""
+            id="input-filtered-field"
+            placeholder="enter name"
+            disabled
+          />
+          <button id="filter-btn" onclick="filterbyName()" disabled>
+            filter by name
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -112,6 +118,7 @@
               <th>Gender</th>
               <th>School</th>
               <th>Course</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody></tbody>
