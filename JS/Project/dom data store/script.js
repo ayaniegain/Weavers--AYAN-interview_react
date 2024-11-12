@@ -81,8 +81,6 @@ function handleClick() {
     return;
   }
 
-  let fullName = `${firstnameValue} ${lastnameValue}`;
-
   let id = currentId;
   currentId++;
 
@@ -90,7 +88,8 @@ function handleClick() {
 
   let myObj = {
     id,
-    fullName,
+    firstname: firstnameValue,
+    lastname: lastnameValue,
     email: emailValue,
     age: ageValue,
     phone: phoneValue,
@@ -138,7 +137,6 @@ function showTable(data = storeArray) {
 
   disabledBtnFunc();
 
-
   if (data.length === 0) {
     tbodyTag.innerHTML = `<tr><td colspan="8" style="text-align: center;">No data found in table</td></tr>`;
     return;
@@ -149,11 +147,21 @@ function showTable(data = storeArray) {
   // console.log(data);
 
   data.forEach((user) => {
-    const { id, fullName, email, age, phone, gender, school, course } = user;
+    const {
+      id,
+      firstname,
+      lastname,
+      email,
+      age,
+      phone,
+      gender,
+      school,
+      course,
+    } = user;
 
     tbodyTag.innerHTML += `<tr>
       <td>${id}</td>
-      <td>${fullName}</td>
+      <td>${firstname} ${lastname}</td>
       <td>${email}</td>
       <td>${age}</td>
       <td>${phone}</td>
@@ -188,12 +196,33 @@ function resetTable() {
   disabledBtnFunc();
 }
 
+function filterbyName() {
+  let inputTextFilter = document
+    .getElementById("input-filtered-field")
+    .value.toLowerCase();
+
+  const newFilteredList = storeArray.filter(
+    (item) =>
+      item.firstname.toLowerCase() === inputTextFilter ||
+      item.lastname.toLowerCase() === inputTextFilter
+  );
+
+  console.log(newFilteredList);
+
+  showTable(newFilteredList);
+
+  document.getElementById("input-filtered-field").value = "";
+}
+
 function disabledBtnFunc() {
   let showTable = document.getElementById("show_table");
   let enableBtn1 = document.getElementById("show_btn1");
   let enableBtn2 = document.getElementById("show_btn2");
   let enableBtn3 = document.getElementById("show_btn3");
   let enableBtn4 = document.getElementById("show_btn4");
+  let inputFilter = document.getElementById("input-filtered-field");
+  let filterBtn = document.getElementById("filter-btn");
+  let showBtntn4 = document.getElementById("show_btn4");
 
   if (storeArray.length >= 1) {
     showTable.disabled = false;
@@ -206,14 +235,21 @@ function disabledBtnFunc() {
     enableBtn2.disabled = false;
     enableBtn3.disabled = false;
     enableBtn4.disabled = false;
+    inputFilter.disabled = false;
+    filterBtn.disabled = false;
+    if (showBtntn4) {
+      showBtntn4.style.backgroundColor = "red";
+      showBtntn4.style.color = "white";
+    }
   } else {
     enableBtn1.disabled = true;
     enableBtn2.disabled = true;
     enableBtn3.disabled = true;
     enableBtn4.disabled = true;
+    inputFilter.disabled = true;
+    filterBtn.disabled = true;
   }
 }
-
 
 let overlay = document.getElementById("backgroundOverlay");
 overlay.style.backgroundColor = "black";
@@ -226,9 +262,9 @@ setInterval(() => {
   overlay.style.opacity = 0;
 
   setTimeout(() => {
-    let randomImg = Math.floor(Math.random() * 5) + 1;
-    overlay.style.backgroundImage = `url("./img${randomImg}.jpg")`;
+    let randomImg = Math.floor(Math.random() * 6) + 1;
+    overlay.style.backgroundImage = `url("./img/img${randomImg}.jpg")`;
 
     overlay.style.opacity = 1;
-  }, 1000); 
-}, 8000);
+  }, 1000);
+}, 6000);
