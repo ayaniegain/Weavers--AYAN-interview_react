@@ -6,6 +6,7 @@ let storeData = data() !== null ? data() : [];
 
 console.log(storeData);
 
+
 let currentId = 1;
 let showAllButton = false;
 
