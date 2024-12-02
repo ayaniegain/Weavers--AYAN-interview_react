@@ -25,3 +25,33 @@ obj.canRun =function(){
 console.log(obj.canRun()) 
 
 // console.log(obj)
+
+
+
+
+let obj={
+    id: "663a0a05bfe65e5778eedf58",
+    title: "The Avengers",
+    content: "I am an Avenger fan... Big fan",
+    rating: 4,
+    by: "Peter D",
+    on: 1718508747000,
+  }
+  
+  let obj1={}
+//   -----------
+  
+  for (const [key,value] of Object.entries(obj)) {
+  
+   obj1[key]= obj[key]
+   obj1[key] = value.toString();
+    
+  }
+  
+  console.log(obj1)
+// -------------
+  for (const key in obj) {
+    obj1[key]= obj[key]
+   
+    }
+  

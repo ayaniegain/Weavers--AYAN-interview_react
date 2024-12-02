@@ -1,0 +1,67 @@
+[
+    {
+      "name": "Wireless Earbuds",
+      "price": 49.99,
+      "quantity": 150,
+      "category": "Electronics",
+      "description": "Compact and ergonomic wireless earbuds with noise cancellation and long battery life.",
+      "image": "https://images.unsplash.com/photo-1512499617640-c2f9992e5e9f"
+    },
+    {
+      "name": "Cotton T-Shirt",
+      "price": 19.99,
+      "quantity": 200,
+      "category": "Clothing",
+      "description": "Comfortable and breathable cotton t-shirt available in multiple colors.",
+      "image": "https://images.unsplash.com/photo-1618354690605-563cc843035b"
+    },
+    {
+      "name": "Coffee Mug",
+      "price": 9.99,
+      "quantity": 300,
+      "category": "Kitchenware",
+      "description": "Durable ceramic coffee mug with a sleek design, perfect for hot beverages.",
+      "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578"
+    },
+    {
+      "name": "Yoga Mat",
+      "price": 24.99,
+      "quantity": 120,
+      "category": "Fitness",
+      "description": "Non-slip yoga mat made of eco-friendly materials, ideal for all types of exercises.",
+      "image": "https://images.unsplash.com/photo-1544035105-884223b74671"
+    },
+    {
+      "name": "Smartphone",
+      "price": 699.99,
+      "quantity": 50,
+      "category": "Electronics",
+      "description": "Latest generation smartphone with high-resolution camera and powerful processor.",
+      "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
+    },
+    {
+      "name": "Running Shoes",
+      "price": 79.99,
+      "quantity": 100,
+      "category": "Footwear",
+      "description": "Lightweight and comfortable running shoes designed for optimal performance.",
+      "image": "https://images.unsplash.com/photo-1562070470-a17a2b722c9c"
+    },
+    {
+      "name": "LED Desk Lamp",
+      "price": 29.99,
+      "quantity": 75,
+      "category": "Home Decor",
+      "description": "Energy-efficient LED desk lamp with adjustable brightness and modern design.",
+      "image": "https://images.unsplash.com/photo-1598466133102-2debc0ed1556"
+    },
+    {
+      "name": "Bluetooth Speaker",
+      "price": 39.99,
+      "quantity": 90,
+      "category": "Electronics",
+      "description": "Portable Bluetooth speaker with excellent sound quality and waterproof design.",
+      "image": "https://images.unsplash.com/photo-1611125232300-0075d2a01b7a"
+    }
+  ]
+  

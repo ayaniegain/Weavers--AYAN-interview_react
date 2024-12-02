@@ -1,0 +1,74 @@
+String-Based Problems ☑️
+Reverse a String
+Write a function to reverse a string without using built-in methods.
+
+Anagram Checker
+Check if two strings are anagrams of each other.
+
+Longest Substring Without Repeating Characters
+Find the length of the longest substring without repeating characters.
+
+Palindromic Substrings
+Count the number of substrings in a string that are palindromes.
+
+Character Frequency
+Write a function to count the frequency of each character in a string.
+
+Capitalize Each Word
+Capitalize the first letter of each word in a sentence.
+
+Find Duplicate Characters
+Find all duplicate characters in a given string.
+
+String Compression
+Implement basic string compression using the counts of repeated characters, e.g., "aaabb" → "a3b2".
+
+Array-Based Problems ☑️
+Find Maximum Subarray Sum
+Solve the maximum subarray problem using the Kadane's algorithm.
+
+Rotate Array
+Rotate an array by k steps to the right.
+
+Remove Duplicates
+Remove duplicate elements from an array without using extra space.
+
+Merge Two Sorted Arrays
+Merge two sorted arrays into one sorted array.
+
+Find Intersection of Two Arrays
+Find the common elements between two arrays.
+
+Group Anagrams
+Group an array of strings into anagrams.
+
+Two Sum Problem
+Find two numbers in an array that add up to a target value.
+
+Reorder Array Based on Condition
+Rearrange an array so that all negatives come before positives without sorting.
+
+Object-Based Problems☑️
+Deep Clone an Object
+Write a function to deep clone a nested object.
+
+Flatten a Nested Object
+Convert a deeply nested object into a single-level object with keys as the path.
+
+Count Properties of Object
+Count the total number of properties in an object, including nested ones.
+
+Convert Object to Query String
+Convert an object into a URL query string.
+
+Find the Most Frequent Key-Value Pair
+Determine which key-value pair appears most frequently in an array of objects.
+
+Filter Object by Value
+Write a function to filter an object based on specific criteria for its values.
+
+Merge Two Objects
+Merge two objects, with the second object overriding keys in the first.
+
+Track Inventory
+Create a function that updates the inventory based on a list of purchase transactions.
