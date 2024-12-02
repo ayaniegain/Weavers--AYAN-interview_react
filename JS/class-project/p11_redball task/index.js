@@ -9,7 +9,6 @@
 //     color: "" // Red, White
 // };
 
-
 let resultBucket = [];
 
 /**
