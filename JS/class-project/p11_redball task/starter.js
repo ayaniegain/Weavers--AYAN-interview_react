@@ -1,50 +1,72 @@
-let arry1 = ["white", "red", "white"]
-let arry2 = ["white", "white", "red", "red", "white"]
-let arry3 = ["white", "white", "white", "red"]
+//create a bucket
+//bucket should not exceed more then 10 balls
+//ball should be red and white. [{color"red"}]
 
-let onlyRedBall = []
+let filteredbucket = [];
+let bucket = [];
 
 
-let xx=arry1.map((item)=>{
-    if (item == "red") {
-        return item
-        // onlyRedBall.push(item)
 
+function createBucket(redCount, whiteCount) {
+
+  let total_count = redCount + whiteCount;
+  if (total_count >= 10 || total_count <= 0) {
+    console.log("total count should be proper");
+  } else {
+    i = 0;
+    while (i < redCount) {
+      bucket.push({ color: "red" });
+      i++;
     }
-})
+    i = 0;
+    while (i < whiteCount) {
+      bucket.push({ color: "white" });
+      i++;
+    }
+  }
+//   return bucket;
+}
 
-console.log(xx);
 
-console.log(arry1);
 
-// arry1.forEach((item) => {
+function pickOnlyRedBall(){
 
-//     if (item == "red") {
+    let onlyredBall= bucket.filter((ball)=>{
+ 
+         if (ball.color!=="red") {
+             // console.log(ball)
+             bucket.push(ball)
+         }else{
+ 
+             // console.log("first")
+             return  ball
+ 
+         }
+         
+     })
+     // console.log("xc",onlyredBall)
+     filteredbucket.push(onlyredBall)
+ 
+ }
+ 
+ 
 
-//         onlyRedBall.push(item)
 
-//     }
 
-// })
 
-// arry2.forEach((item) => {
 
-//     if (item == "red") {
 
-//         onlyRedBall.push(item)
+// console.log("onlywhite",bucket)
 
-//     }
 
-// })
 
-// arry3.forEach((item) => {
+function main() {
+    let bucketElem = createBucket(3, 4);
+    pickOnlyRedBall();
+    //   console.log(bucketElem);
+}
+main();
+console.log("bk",bucket)
 
-//     if (item == "red") {
-
-//         onlyRedBall.push(item)
-
-//     }
-
-// })
-
-// console.log(onlyRedBall);
+// console.log("onlywhite",bucket)
+// console.log("filtered",filteredbucket.flat())
