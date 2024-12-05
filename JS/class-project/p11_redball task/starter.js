@@ -5,10 +5,7 @@
 let filteredbucket = [];
 let bucket = [];
 
-
-
 function createBucket(redCount, whiteCount) {
-
   let total_count = redCount + whiteCount;
   if (total_count >= 10 || total_count <= 0) {
     console.log("total count should be proper");
@@ -24,49 +21,21 @@ function createBucket(redCount, whiteCount) {
       i++;
     }
   }
-//   return bucket;
 }
 
+function pickOnlyRedBall() {
+  whiteballbucket = bucket.filter((item) => item.color !== "red");
+  redBallBucket = bucket.filter((item) => item.color !== "white");
+  filteredbucket.push(redBallBucket);
 
-
-function pickOnlyRedBall(){
-
-    let onlyredBall= bucket.filter((ball)=>{
- 
-         if (ball.color!=="red") {
-             // console.log(ball)
-             bucket.push(ball)
-         }else{
- 
-             // console.log("first")
-             return  ball
- 
-         }
-         
-     })
-     // console.log("xc",onlyredBall)
-     filteredbucket.push(onlyredBall)
- 
- }
- 
- 
-
-
-
-
-
-
-// console.log("onlywhite",bucket)
-
-
+  bucket = whiteballbucket;
+}
 
 function main() {
-    let bucketElem = createBucket(3, 4);
-    pickOnlyRedBall();
-    //   console.log(bucketElem);
+  createBucket(3, 4);
+  pickOnlyRedBall();
 }
 main();
-console.log("bk",bucket)
 
-// console.log("onlywhite",bucket)
-// console.log("filtered",filteredbucket.flat())
+console.log("bucket", bucket);
+console.log("filtered-red-ball", filteredbucket.flat());
