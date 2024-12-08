@@ -13,6 +13,10 @@ fetch('./data.json')
 
   function init(sample){
 
+    sample.forEach(cart => {
+      
+    });
+
     console.log(sample); 
     
 
