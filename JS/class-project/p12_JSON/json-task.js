@@ -7,20 +7,19 @@ let cartDetails = {
   },
   Products: {
     items: [
-      { title: "Levie's Jeans", quantity: 3, price: 1500 },
-      { title: "Denim Shirt ", quantity: 2, price: 1000 },
+      { title: "Levie's Jeans", quantity: 3, price: 1000 },
+      { title: "Denim Shirt ", quantity: 2, price: 50 },
       { title: "Cold cream", quantity: 4, price: 100 },
-      { title: "maflar", quantity: 5, price: 500 },
     ],
 
     CartPrice: {
       discount: 10,
       amount: function () {
-        return  cartDetails.Products.items.reduce((curr,all)=>(all.price*all.quantity)+curr,0)
+        return  cartDetails.Products.items.reduce((curr,all)=>(curr+all.price*all.quantity),0)
       },
       finalPrice: function () {
         let disPercentage=(100-this.discount)/100
-        return this.amount()>=10000? (this.amount()*disPercentage) :this.amount()
+        return this.amount()>=1000? (this.amount()*disPercentage) :this.amount()
       },
     },
   },
