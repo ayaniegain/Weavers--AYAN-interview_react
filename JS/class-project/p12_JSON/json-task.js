@@ -51,7 +51,7 @@ const countDown = () => {
         if (num === 0) {
           resolve(); 
         }
-      }, index * 1200);
+      }, index * 800);
     });
   });
 };
@@ -71,7 +71,7 @@ let paymentProcess = () => {
         console.log(" rate out application.〽️");
         
         response("complete Process, EXIT");
-      }, 3000);
+      }, 2400);
     })
   });
 };
