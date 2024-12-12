@@ -22,9 +22,7 @@ let cartDetails = {
       },
       finalPrice: function () {
         let disPercentage = (100 - this.discount) / 100;
-        return this.amount() >= 1000
-          ? this.amount() * disPercentage
-          : this.amount();
+        return this.amount() >= 1000? this.amount() * disPercentage: this.amount();
       },
     },
   },
@@ -59,32 +57,29 @@ const countDown = () => {
 
 
 let paymentProcess = () => {
-  return new Promise((response, reject) => {
-    // countDown((num) => console.log("process to payment...",num));
+  return new Promise(async(response, reject) => {
+    // countDown((num) => console.log("process to payment..."));
+    // console.log("process to payment...");
 
-    countDown().then(() => {
-
-      
+    await countDown()
+    // countDown().then(() => {
       return setTimeout(() => {
         console.log(" payment successful ✅");
         console.log(" thanks for shoping.😍");
         console.log(" rate out application.〽️");
-        
         response("complete Process, EXIT");
       }, 2400);
-    })
+    // })
   });
 };
 
-function main() {
+async function main() {
   console.log("value to pay ", cartDetails?.Products?.CartPrice.amount());
   console.log("added discount", cartDetails.Products.CartPrice.discount, "%");
-  console.log(
-    "final amount to pay",
-    cartDetails?.Products?.CartPrice.finalPrice()
-  );
+  console.log("final amount to pay",cartDetails?.Products?.CartPrice.finalPrice());
   console.log("click to confirm 👍");
-
-  paymentProcess().then((res) => console.log(res));
+  // paymentProcess().then((res) => console.log(res));
+  let res=await paymentProcess()
+  console.log(res)
 }
 main();
