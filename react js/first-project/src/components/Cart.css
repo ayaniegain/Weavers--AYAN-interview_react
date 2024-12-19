@@ -1,0 +1,15 @@
+
+.cart{
+    height: 350px;
+    width: 350px;
+    border: 4px solid black;
+    text-align: center;
+}
+.cart img{
+    height: 200px;
+    width: 200px;
+}
+.cart h2{
+    color: blue;
+
+}
