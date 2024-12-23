@@ -2,6 +2,8 @@ import React from "react";
 import "./Cart.css";
 
 function Cart({ laptops }) {
+  console.log(laptops)
+
   return (
     <main className="main">
       <h2 className="text-3xl font-bold underline">Cart Page</h2>

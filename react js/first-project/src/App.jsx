@@ -7,6 +7,7 @@ import Footer from "./components/Navbar/Footer";
 
 function App() {
   let { laptops } = data;
+
   return (
     <div>
       <Header/>
