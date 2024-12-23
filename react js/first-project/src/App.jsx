@@ -1,15 +1,15 @@
-import React from 'react'
-import Cart from './components/Cart'
-import "./App.css"
+import React from "react";
+import Cart from "./components/cart/Cart";
+import "./App.css";
+import data from "./data/data.json";
 
 function App() {
+  let { laptops } = data;
   return (
-        <div className="navbar">
-
-      <h2>CART PAGE</h2>
-      <Cart></Cart>
-    </div>
-  )
+    <>
+      <Cart laptops={laptops} />
+    </>
+  );
 }
 
-export default App
+export default App;

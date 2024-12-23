@@ -1,0 +1,204 @@
+{
+  "laptops": [
+    {
+      "id": 1,
+      "name": "Dell Inspiron 15",
+      "brand": "Dell",
+      "price": 45999,
+      "stock": 20,
+      "rating": 4.5,
+      "reviewCount": 320,
+      "description": "15.6-inch FHD laptop with Intel Core i5, 8GB RAM, and 512GB SSD.",
+      "specifications": {
+        "Processor": "Intel Core i5 11th Gen",
+        "RAM": "8GB",
+        "Storage": "512GB SSD",
+        "Display": "15.6-inch Full HD",
+        "Graphics": "Integrated Intel Iris Xe",
+        "Battery": "Up to 8 hours",
+        "Weight": "1.8kg"
+      },
+      "images": ["../../public/images/01_lenevo.webp"]
+    },
+    {
+      "id": 2,
+      "name": "HP Pavilion x360",
+      "brand": "HP",
+      "price": 63999,
+      "stock": 15,
+      "rating": 4.7,
+      "reviewCount": 450,
+      "description": "14-inch touchscreen 2-in-1 laptop with Intel Core i7, 16GB RAM, and 1TB SSD.",
+      "specifications": {
+        "Processor": "Intel Core i7 12th Gen",
+        "RAM": "16GB",
+        "Storage": "1TB SSD",
+        "Display": "14-inch Full HD Touchscreen",
+        "Graphics": "NVIDIA GeForce MX450",
+        "Battery": "Up to 10 hours",
+        "Weight": "1.6kg"
+      },
+      "images": ["../../public/images/02_HP Pavilion x360.webp"]
+    },
+    {
+      "id": 3,
+      "name": "Lenovo IdeaPad Slim 5",
+      "brand": "Lenovo",
+      "price": 49999,
+      "stock": 25,
+      "rating": 4.6,
+      "reviewCount": 380,
+      "description": "14-inch compact laptop with AMD Ryzen 5, 8GB RAM, and 512GB SSD.",
+      "specifications": {
+        "Processor": "AMD Ryzen 5 5500U",
+        "RAM": "8GB",
+        "Storage": "512GB SSD",
+        "Display": "14-inch Full HD",
+        "Graphics": "Integrated AMD Radeon",
+        "Battery": "Up to 9 hours",
+        "Weight": "1.39kg"
+      },
+      "images": ["../../public/images/03_Lenovo IdeaPad Slim 5.webp"]
+    },
+    {
+      "id": 4,
+      "name": "ASUS VivoBook 15",
+      "brand": "ASUS",
+      "price": 39999,
+      "stock": 18,
+      "rating": 4.3,
+      "reviewCount": 210,
+      "description": "15.6-inch laptop with Intel Core i3, 4GB RAM, and 256GB SSD.",
+      "specifications": {
+        "Processor": "Intel Core i3 10th Gen",
+        "RAM": "4GB",
+        "Storage": "256GB SSD",
+        "Display": "15.6-inch Full HD",
+        "Graphics": "Integrated Intel UHD",
+        "Battery": "Up to 7 hours",
+        "Weight": "1.7kg"
+      },
+      "images": ["../../public/images/04_ASUS VivoBook 15.webp"]
+    },
+    {
+      "id": 5,
+      "name": "Acer Aspire 7",
+      "brand": "Acer",
+      "price": 57999,
+      "stock": 12,
+      "rating": 4.4,
+      "reviewCount": 270,
+      "description": "15.6-inch gaming laptop with AMD Ryzen 5, 8GB RAM, and 512GB SSD.",
+      "specifications": {
+        "Processor": "AMD Ryzen 5 3550H",
+        "RAM": "8GB",
+        "Storage": "512GB SSD",
+        "Display": "15.6-inch Full HD",
+        "Graphics": "NVIDIA GTX 1650",
+        "Battery": "Up to 6 hours",
+        "Weight": "2.15kg"
+      },
+      "images": ["../../public/images/05_Acer Aspire 7.webp"]
+    },
+    {
+      "id": 6,
+      "name": "Apple MacBook Air M2",
+      "brand": "Apple",
+      "price": 92999,
+      "stock": 10,
+      "rating": 4.8,
+      "reviewCount": 610,
+      "description": "13.3-inch ultra-thin laptop with Apple M2 chip, 8GB RAM, and 256GB SSD.",
+      "specifications": {
+        "Processor": "Apple M2",
+        "RAM": "8GB",
+        "Storage": "256GB SSD",
+        "Display": "13.3-inch Retina",
+        "Graphics": "Integrated",
+        "Battery": "Up to 18 hours",
+        "Weight": "1.29kg"
+      },
+      "images": ["../../public/images/06_Apple MacBook Air M2.webp"]
+    },
+    {
+      "id": 7,
+      "name": "MSI Modern 14",
+      "brand": "MSI",
+      "price": 52999,
+      "stock": 22,
+      "rating": 4.5,
+      "reviewCount": 340,
+      "description": "14-inch lightweight laptop with Intel Core i5, 8GB RAM, and 512GB SSD.",
+      "specifications": {
+        "Processor": "Intel Core i5 10th Gen",
+        "RAM": "8GB",
+        "Storage": "512GB SSD",
+        "Display": "14-inch Full HD",
+        "Graphics": "Integrated Intel UHD",
+        "Battery": "Up to 10 hours",
+        "Weight": "1.3kg"
+      },
+      "images": ["../../public/images/07 _MSI Modern 14.webp"]
+    },
+    {
+      "id": 8,
+      "name": "Samsung Galaxy Book2",
+      "brand": "Samsung",
+      "price": 69999,
+      "stock": 8,
+      "rating": 4.6,
+      "reviewCount": 410,
+      "description": "15.6-inch AMOLED display laptop with Intel Core i7, 16GB RAM, and 512GB SSD.",
+      "specifications": {
+        "Processor": "Intel Core i7 12th Gen",
+        "RAM": "16GB",
+        "Storage": "512GB SSD",
+        "Display": "15.6-inch AMOLED",
+        "Graphics": "Integrated Intel Iris Xe",
+        "Battery": "Up to 12 hours",
+        "Weight": "1.55kg"
+      },
+      "images": ["../../public/images/08_Samsung Galaxy Book2.webp"]
+    },
+    {
+      "id": 9,
+      "name": "Microsoft Surface Laptop Go",
+      "brand": "Microsoft",
+      "price": 72999,
+      "stock": 14,
+      "rating": 4.7,
+      "reviewCount": 500,
+      "description": "12.4-inch portable laptop with Intel Core i5, 8GB RAM, and 256GB SSD.",
+      "specifications": {
+        "Processor": "Intel Core i5 11th Gen",
+        "RAM": "8GB",
+        "Storage": "256GB SSD",
+        "Display": "12.4-inch PixelSense",
+        "Graphics": "Integrated Intel Iris Xe",
+        "Battery": "Up to 13 hours",
+        "Weight": "1.11kg"
+      },
+      "images": ["../../public/images/09_Microsoft Surface Laptop Go.webp"]
+    },
+    {
+      "id": 10,
+      "name": "Razer Blade 15",
+      "brand": "Razer",
+      "price": 129999,
+      "stock": 5,
+      "rating": 4.9,
+      "reviewCount": 700,
+      "description": "15.6-inch high-performance gaming laptop with Intel Core i9, 32GB RAM, and 1TB SSD.",
+      "specifications": {
+        "Processor": "Intel Core i9 12th Gen",
+        "RAM": "32GB",
+        "Storage": "1TB SSD",
+        "Display": "15.6-inch QHD 240Hz",
+        "Graphics": "NVIDIA RTX 3080 Ti",
+        "Battery": "Up to 6 hours",
+        "Weight": "2.1kg"
+      },
+      "images": ["../../public/images/10_Razer Blade 15.webp"]
+    }
+  ]
+}
