@@ -1,0 +1,101 @@
+{
+  "cart": {
+    "items": [
+      {
+        "productId": "M19TWS426",
+        "productName": "Mobofix New Edition TWS M19 Gaming Earbuds",
+        "variant": "Black, True Wireless",
+        "imageUrl": "../../src/assets/01_img.webp",
+        "seller": "Mobofix Digital",
+        "price": 426,
+        "originalPrice": 1299,
+        "discount": 67,
+        "quantity": 1,
+        "delivery": {
+          "estimatedDate": "2024-12-31",
+          "charges": 0
+        },
+        "additionalOffers": ["10 offers available"]
+      },
+      {
+        "productId": "SamsungGalaxyBook4",
+        "productName": "Samsung Galaxy Book 4",
+        "variant": "Metal Intel Core i3 13th Gen",
+        "imageUrl": "../../src/assets/02_img.webp",
+        "seller": "Samsung Official Store",
+        "price": 65000,
+        "originalPrice": 80000,
+        "discount": 19,
+        "quantity": 1,
+        "delivery": {
+          "estimatedDate": "2024-01-04",
+          "charges": 0
+        },
+        "additionalOffers": ["Free delivery", "Exchange offers available"]
+      },
+      {
+        "productId": "AirPurifier345",
+        "productName": "Dyson Pure Cool Air Purifier",
+        "variant": "White/Silver",
+        "imageUrl": "../../src/assets/03_img.webp",
+        "seller": "Dyson India",
+        "price": 25000,
+        "originalPrice": 30000,
+        "discount": 17,
+        "quantity": 1,
+        "delivery": {
+          "estimatedDate": "2024-12-30",
+          "charges": 200
+        },
+        "additionalOffers": ["No cost EMI available", "Extended warranty"]
+      },
+      {
+        "productId": "NoiseSmartWatch100",
+        "productName": "Noise ColorFit Pulse Smartwatch",
+        "variant": "Black Strap",
+        "imageUrl": "../../src/assets/04_img.webp",
+        "seller": "Noise Official",
+        "price": 1999,
+        "originalPrice": 4999,
+        "discount": 60,
+        "quantity": 1,
+        "delivery": {
+          "estimatedDate": "2024-12-28",
+          "charges": 50
+        },
+        "additionalOffers": ["Flat 60% off", "Free shipping on Noise members"]
+      },
+      {
+        "productId": "SonyHeadphonesZX",
+        "productName": "Sony ZX110A Wired Headphones",
+        "variant": "White",
+        "imageUrl": "../../src/assets/05_img.webp",
+        "seller": "Sony Official",
+        "price": 990,
+        "originalPrice": 1499,
+        "discount": 34,
+        "quantity": 1,
+        "delivery": {
+          "estimatedDate": "2024-12-29",
+          "charges": 0
+        },
+        "additionalOffers": ["Exclusive online offer"]
+      }
+    ],
+    "priceDetails": {
+      "subTotal": 95415,
+      "discount": 34545,
+      "deliveryCharges": 250,
+      "totalAmount": 61120,
+      "savings": 34545
+    },
+    "userDetails": {
+      "savedAddresses": true,
+      "pincode": "700001"
+    },
+    "security": {
+      "paymentSafety": true,
+      "returnPolicy": "100% Authentic products with easy returns."
+    }
+  }
+}

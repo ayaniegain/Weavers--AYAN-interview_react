@@ -1,0 +1,1 @@
+component render , whole page render depents on value chanes . state and props
