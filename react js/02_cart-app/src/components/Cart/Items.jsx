@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { formatedDate } from "../customDate/customDate.js";
 
-function Items({ item }) {
+function Items({ item,onUpdate,onRemove }) {
   const {
     productName,
     variant,
@@ -12,6 +12,7 @@ function Items({ item }) {
     originalPrice,
     discount,
     quantity,
+    productId,
     additionalOffers,
     delivery: { estimatedDate, charges },
   } = item;
@@ -39,7 +40,9 @@ function Items({ item }) {
   useEffect(() => {
     setTotalPrice(productCount * price);
     setOriginalPrice(originalPrice * productCount);
+    onUpdate({...item,quantity:productCount})
   }, [productCount, price]);
+
 
   
 
@@ -154,8 +157,7 @@ function Items({ item }) {
             </svg>
           </button>
         </div>
-        <button className="font-medium">SAVE FOR LATER</button>
-        <button className="font-medium">REMOVE</button>
+        <button className="font-medium" onClick={()=>onRemove(productId)}>REMOVE</button>
       </div>
     </div>
   );
