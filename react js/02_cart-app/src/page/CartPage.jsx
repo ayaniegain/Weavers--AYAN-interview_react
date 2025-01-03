@@ -24,6 +24,9 @@ function CartPage({ cartData }) {
 
 
   let onUpdate=(proditem)=>{
+
+    console.log(items.map((item) => item.productId == proditem.productId))
+
     setItems(items.map((item) => item.productId == proditem.productId?proditem : item));
 
   }
@@ -31,7 +34,7 @@ function CartPage({ cartData }) {
   let onRemove = (id) => {
     setItems(items.filter((item) => item.productId !== id));
   };
-console.log(items)
+// console.log(items)
   return (
     <div className="h-auto bg-slate-200 flex gap-4">
       <div className="cart-section w-[65%] py-10 ml-24">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { formatedDate } from "../customDate/customDate.js";
 
-function Items({ item,onUpdate,onRemove }) {
+function Items({ item, onUpdate, onRemove }) {
   const {
     productName,
     variant,
@@ -24,11 +24,7 @@ function Items({ item,onUpdate,onRemove }) {
   const [originalTotalPrice, setOriginalPrice] = useState(originalPrice);
 
   function handleChange(e) {
-    let action = parseInt(e.target.value);
-
-    if (action && action > 1) {
-      setProductCount(+action);
-    }
+    e === "" ? setProductCount(1) : setProductCount(+e);
   }
 
   function handleClick(action) {
@@ -40,11 +36,8 @@ function Items({ item,onUpdate,onRemove }) {
   useEffect(() => {
     setTotalPrice(productCount * price);
     setOriginalPrice(originalPrice * productCount);
-    onUpdate({...item,quantity:productCount})
+    onUpdate({ ...item, quantity: productCount });
   }, [productCount, price]);
-
-
-  
 
   return (
     <div className="flex flex-col justify-between px-10 py-4 border-b-2 border-gray-200">
@@ -130,7 +123,7 @@ function Items({ item,onUpdate,onRemove }) {
             // placeholder={productCount}
             value={productCount}
             required
-            onChange={handleChange}
+            onChange={(e) => handleChange(e.target.value)}
           />
 
           <button
@@ -157,7 +150,9 @@ function Items({ item,onUpdate,onRemove }) {
             </svg>
           </button>
         </div>
-        <button className="font-medium" onClick={()=>onRemove(productId)}>REMOVE</button>
+        <button className="font-medium" onClick={() => onRemove(productId)}>
+          REMOVE
+        </button>
       </div>
     </div>
   );
