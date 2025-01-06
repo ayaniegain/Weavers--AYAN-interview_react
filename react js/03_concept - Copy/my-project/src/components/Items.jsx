@@ -1,17 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
-import { CounterContext } from "../context/ValueProvider";
+import React, { useEffect, useState } from "react";
 
-function Items({ price }) {
+function Items({ price, calculateTotalPrice }) {
   let [quantity, setQuantity] = useState(1);
   const [itemPrice, setItemPrice] = useState(price);
   const [action, setAction] = useState(null);
 
-  const { calculateTotalPrice } = useContext(CounterContext);
-
   useEffect(() => {
     setItemPrice(quantity * price);
     calculateTotalPrice(price, action);
-  }, [quantity]);
+  }, [quantity, price]);
 
   function inc() {
     setQuantity((quantity) => quantity + 1);
@@ -28,7 +25,9 @@ function Items({ price }) {
       <div className="text-orange-600 font-bold text-center text-2sm py-4">
         Total Price : {itemPrice}
       </div>
+
       <p className="text-green-700 text-xl">Quantity {quantity}</p>
+
       <div className="space-x-8 ">
         <button className="h-8 w-8  text-2xl bg-orange-500" onClick={dec}>
           -
