@@ -24,7 +24,6 @@ function CartItem({
     }
   }, [quantity]);
 
-
   function handleItemPrice(action) {
     if (action === "inc") {
       setQuantity((prequantity) => prequantity + 1);

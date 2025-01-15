@@ -1,65 +1,53 @@
 import React, { useState } from "react";
 import CartItem from "./CartItem";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import { useEffect } from "react";
-// import { Tooltip } from 'react-tooltip';
 
-
-function Cartpage({ cartProducts,showHomeFunc,subTotalPassToheader }) {
+function Cartpage({ cartProducts, showHomeFunc, subTotalPassToheader }) {
   let [totalPrice, setTotalPrice] = useState(0);
-  let [discountWord, setDiscountWord] = useState('');
+  let [discountWord, setDiscountWord] = useState("");
   let [freeDevivery, setFreedelivery] = useState(false);
 
-
   let deliveryCharges;
-  cartProducts.length==0? deliveryCharges=0 :deliveryCharges = 12.0
-  
+  cartProducts.length == 0 ? (deliveryCharges = 0) : (deliveryCharges = 12.0);
 
-  let checkoutPrice =freeDevivery?totalPrice :totalPrice + deliveryCharges;
+  let checkoutPrice = freeDevivery ? totalPrice : totalPrice + deliveryCharges;
 
   function countTotalPrice(price) {
-
     setTotalPrice((totalPrice) => totalPrice + price);
   }
 
-  function applyDiscound(event){
+  function applyDiscound(event) {
     event.stopPropagation();
-    if (discountWord.toLocaleLowerCase()==="freedelivery") {
+    if (discountWord.toLocaleLowerCase() === "freedelivery") {
+      setFreedelivery(true);
 
-      setFreedelivery(true)
-      
       toast("Coupon Applied!!");
-      
     }
-    
   }
 
   useEffect(() => {
-  
-    subTotalPassToheader(checkoutPrice.toFixed())
-  }, [checkoutPrice])
-  
+    subTotalPassToheader(checkoutPrice.toFixed());
+  }, [checkoutPrice]);
 
-  
   return (
     <div className="flex flex-col md:flex-row gap-10 p-10 relative">
-      <ToastContainer/>
-  <button
-          className="absolute top-4 left-4 tooltip  tooltip-right rounded-full p-2 bg-gray-200 hover:bg-gray-300"
-          data-tip="home"
+      <ToastContainer />
+      <button
+        className="absolute top-4 left-4 tooltip  tooltip-right rounded-full p-2 bg-gray-200 hover:bg-gray-300"
+        data-tip="home"
+        onClick={showHomeFunc}
+      >
+        ←
+      </button>
 
-          onClick={showHomeFunc}
-        >
-          ←
-        </button>
-
-  
       <section className="cart p-5 md:p-10 w-full md:w-2/3 shadow-lg bg-white rounded-lg border-gray-100 border-2">
-       
         <h2 className="text-2xl font-semibold text-black mb-4">Shopping Bag</h2>
         <p className="text-black mb-4">
-          <span className="text-xl font-semibold text-black">{cartProducts.length} Items</span> in
-          your bag.
+          <span className="text-xl font-semibold text-black">
+            {cartProducts.length} Items
+          </span>{" "}
+          in your bag.
         </p>
         <div className="all-cart-list">
           <ul className="flex justify-between border-b pb-2 mb-2">
@@ -68,30 +56,39 @@ function Cartpage({ cartProducts,showHomeFunc,subTotalPassToheader }) {
             <li className="w-1/4">Quantity</li>
             <li className="w-1/4">Total Price</li>
           </ul>
+          <>
+            {cartProducts.length == 0 ? (
+              <div className="flex justify-center items-center h-32">
+                <h2 className="text-gray-700">No Items Found in the Cart </h2>
+              </div>
+            ) : (
+              <>
+                {cartProducts.map((item) => {
+                  const {
+                    id,
+                    title,
+                    price,
+                    shippingInformation,
 
-          {cartProducts.map((item) => {
-            const {
-              id,
-              title,
-              price,
-              shippingInformation,
-
-              images,
-              brand,
-            } = item;
-            return (
-              <CartItem
-                key={id}
-                images={images}
-                title={title}
-                brand={brand}
-                price={price}
-                delivery={shippingInformation}
-                pid={id}
-                countTotalPrice={countTotalPrice}
-              />
-            );
-          })}
+                    images,
+                    brand,
+                  } = item;
+                  return (
+                    <CartItem
+                      key={id}
+                      images={images}
+                      title={title}
+                      brand={brand}
+                      price={price}
+                      delivery={shippingInformation}
+                      pid={id}
+                      countTotalPrice={countTotalPrice}
+                    />
+                  );
+                })}
+              </>
+            )}
+          </>
         </div>
       </section>
       <section className="payment p-5 md:p-10 w-full md:w-1/4 shadow-lg bg-white rounded-lg border-gray-100 border-2">
@@ -105,18 +102,22 @@ function Cartpage({ cartProducts,showHomeFunc,subTotalPassToheader }) {
             type="text"
             className="border p-2 w-full mb-2 bg-white"
             placeholder="apply coupon"
-
             value={discountWord}
-
-            onChange={(e)=>setDiscountWord(e.target.value)}
-
-
+            onChange={(e) => setDiscountWord(e.target.value)}
           />
-          <button className="bg-teal-900 text-white px-4 py-2" onClick={applyDiscound}>
+          <button
+            className="bg-teal-900 text-white px-4 py-2"
+            onClick={applyDiscound}
+          >
             {!freeDevivery ? "APPLY" : "COUPON APPLIED!"}
           </button>
           {freeDevivery && (
-            <button className="bg-white text-white px-2 py-1 ml-2" onClick={() => {setFreedelivery(false),setDiscountWord("")}}>
+            <button
+              className="bg-white text-white px-2 py-1 ml-2"
+              onClick={() => {
+                setFreedelivery(false), setDiscountWord("");
+              }}
+            >
               ❌
             </button>
           )}
@@ -128,7 +129,11 @@ function Cartpage({ cartProducts,showHomeFunc,subTotalPassToheader }) {
           <p className="flex justify-between mb-2">
             Cart subtotal <span>${totalPrice.toFixed(2)}</span>
           </p>
-          <p className={`flex justify-between mb-2 ${freeDevivery?"line-through":"" }`}>
+          <p
+            className={`flex justify-between mb-2 ${
+              freeDevivery ? "line-through" : ""
+            }`}
+          >
             Delivery charges <span>${deliveryCharges.toFixed(2)}</span>
           </p>
 
