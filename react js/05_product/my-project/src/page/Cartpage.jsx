@@ -16,30 +16,45 @@ function Cartpage({
   cartItems.length === 0 ? (deliveryCharges = 0) : (deliveryCharges = 12.0);
 
   let checkoutPrice = freeDevivery ? totalPrice : totalPrice + deliveryCharges;
-  // console.log(cartItems)
 
 
+  function cartPriceUpdated() {
+    return cartItems.reduce((curr, all) => {
+      return curr + all.price;
+    }, 0);
+  }
 
-  const calculateTotalPrice = (price=0, action) => {
-
-   
-    if (action === null) {
-      setTotalPrice((totalPrice) => totalPrice + price);
-   
-
-    } else if (action === "inc") {
-      setTotalPrice((totalPrice) => totalPrice + price);
-    } else if (action === "dec") {
-      setTotalPrice((totalPrice) => totalPrice - price);
+  useEffect(() => {
+    if (!cartItems.length == 0) {
+      setTotalPrice(cartPriceUpdated());
     } else {
       setTotalPrice(0);
-    
     }
-  };
+  }, [totalPrice, cartItems]);
   
- 
+  useEffect(() => {
+    subTotalPassToheader(checkoutPrice.toFixed());
+  }, [checkoutPrice]);
 
 
+
+  
+  const calculateTotalPrice = (price, action) => {
+
+  //   if (action === null) {
+  //     setTotalPrice((totalPrice) => totalPrice + price);
+
+  //   } else if (action === "inc") {
+  //     setTotalPrice((totalPrice) => totalPrice + price);
+  //   } else if (action === "dec") {
+  //     setTotalPrice((totalPrice) => totalPrice - price);
+  //   } else {
+  //     setTotalPrice(0);
+
+  //   }
+  };
+
+  
   function applyDiscound(event) {
     event.stopPropagation();
     if (discountWord.toLocaleLowerCase() === "freedelivery") {
@@ -49,9 +64,8 @@ function Cartpage({
     }
   }
 
-  useEffect(() => {
-    subTotalPassToheader(checkoutPrice.toFixed());
-  }, [checkoutPrice]);
+
+  console.log(totalPrice)
 
   return (
     <div className="flex flex-col md:flex-row gap-10 p-10 relative">
@@ -107,6 +121,7 @@ function Cartpage({
                       pid={id}
                       calculateTotalPrice={calculateTotalPrice}
                       handleDeleteCart={handleDeleteCart}
+                      cartItems={cartItems}
                     />
                   );
                 })}

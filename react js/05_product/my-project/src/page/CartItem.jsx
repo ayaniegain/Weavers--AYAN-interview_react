@@ -10,28 +10,22 @@ function CartItem({
   calculateTotalPrice,
   handleDeleteCart,
 }) {
-  // let [itemPrice, setItemPrice] = useState(price);
+  let [itemPrice, setItemPrice] = useState(price);
   let [quantity, setQuantity] = useState(1);
   let [action, setAction] = useState(null);
 
-console.log(price)
-
   useEffect(() => {
-    // setItemPrice(quantity * price);
+    setItemPrice(price * quantity);
     calculateTotalPrice(price, action);
-
-  }, [quantity]);
+  }, [quantity, price]);
 
   function handleInc() {
     setQuantity((quantity) => quantity + 1);
-    // calculateTotalPrice(price, action);
     setAction("inc");
   }
 
   function handleDec() {
-    // calculateTotalPrice(price, action);
-
-   quantity<=1?setQuantity(1) : setQuantity((quantity) => quantity - 1);
+    quantity <= 1 ? setQuantity(1) : setQuantity((quantity) => quantity - 1);
     setAction("dec");
   }
 
@@ -60,7 +54,7 @@ console.log(price)
             </button>
           </div>
         </li>
-        <li className="w-1/4">${(quantity*price).toFixed(2)}</li>
+        <li className="w-1/4">${itemPrice.toFixed(2)}</li>
         <button
           className="text-orange-400 text-xl"
           onClick={() => handleDeleteCart(pid)}
