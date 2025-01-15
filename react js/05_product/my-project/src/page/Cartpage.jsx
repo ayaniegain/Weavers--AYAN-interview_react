@@ -1,21 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CartItem from "./CartItem";
 import { ToastContainer, toast } from "react-toastify";
-import { useEffect } from "react";
 
-function Cartpage({ cartProducts, showHomeFunc, subTotalPassToheader }) {
+function Cartpage({
+  cartItems,
+  showHomeFunc,
+  subTotalPassToheader,
+  handleDeleteCart,
+}) {
   let [totalPrice, setTotalPrice] = useState(0);
   let [discountWord, setDiscountWord] = useState("");
   let [freeDevivery, setFreedelivery] = useState(false);
 
   let deliveryCharges;
-  cartProducts.length == 0 ? (deliveryCharges = 0) : (deliveryCharges = 12.0);
+  cartItems.length === 0 ? (deliveryCharges = 0) : (deliveryCharges = 12.0);
 
   let checkoutPrice = freeDevivery ? totalPrice : totalPrice + deliveryCharges;
+  // console.log(cartItems)
 
-  function countTotalPrice(price) {
-    setTotalPrice((totalPrice) => totalPrice + price);
-  }
+
+
+  const calculateTotalPrice = (price=0, action) => {
+
+   
+    if (action === null) {
+      setTotalPrice((totalPrice) => totalPrice + price);
+   
+
+    } else if (action === "inc") {
+      setTotalPrice((totalPrice) => totalPrice + price);
+    } else if (action === "dec") {
+      setTotalPrice((totalPrice) => totalPrice - price);
+    } else {
+      setTotalPrice(0);
+    
+    }
+  };
+  
+ 
+
 
   function applyDiscound(event) {
     event.stopPropagation();
@@ -45,7 +68,7 @@ function Cartpage({ cartProducts, showHomeFunc, subTotalPassToheader }) {
         <h2 className="text-2xl font-semibold text-black mb-4">Shopping Bag</h2>
         <p className="text-black mb-4">
           <span className="text-xl font-semibold text-black">
-            {cartProducts.length} Items
+            {cartItems.length} Items
           </span>{" "}
           in your bag.
         </p>
@@ -57,13 +80,13 @@ function Cartpage({ cartProducts, showHomeFunc, subTotalPassToheader }) {
             <li className="w-1/4">Total Price</li>
           </ul>
           <>
-            {cartProducts.length == 0 ? (
+            {cartItems.length === 0 ? (
               <div className="flex justify-center items-center h-32">
                 <h2 className="text-gray-700">No Items Found in the Cart </h2>
               </div>
             ) : (
               <>
-                {cartProducts.map((item) => {
+                {cartItems.map((item) => {
                   const {
                     id,
                     title,
@@ -82,7 +105,8 @@ function Cartpage({ cartProducts, showHomeFunc, subTotalPassToheader }) {
                       price={price}
                       delivery={shippingInformation}
                       pid={id}
-                      countTotalPrice={countTotalPrice}
+                      calculateTotalPrice={calculateTotalPrice}
+                      handleDeleteCart={handleDeleteCart}
                     />
                   );
                 })}

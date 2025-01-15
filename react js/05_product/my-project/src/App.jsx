@@ -27,11 +27,22 @@ export default function App() {
 
  
   function subTotalPassToheader(value){
-console.log(value)
     setSubtotal(value)
 
 
   }
+
+  function handleDeleteCart(cartId){
+
+    if (cartItems) {
+
+      setCartItems(cartItems.filter((cart)=>cart.id !==cartId));
+      
+    }
+
+
+  }
+
 
   return (
     <NavMain >
@@ -52,7 +63,7 @@ console.log(value)
           />
         )
       )}
-      {showCart && <Cartpage cartProducts={cartItems} showHomeFunc={showHomeFunc} subTotalPassToheader={subTotalPassToheader}/>}
+      {showCart && <Cartpage cartItems={cartItems} showHomeFunc={showHomeFunc} subTotalPassToheader={subTotalPassToheader} handleDeleteCart={handleDeleteCart}/>}
     <div>
       
     </div>

@@ -7,36 +7,32 @@ function CartItem({
   pid,
   images,
   brand,
-  countTotalPrice,
+  calculateTotalPrice,
+  handleDeleteCart,
 }) {
-  let [itemPrice, setItemPrice] = useState(price);
+  // let [itemPrice, setItemPrice] = useState(price);
   let [quantity, setQuantity] = useState(1);
-  let [action, setAction] = useState("inc");
+  let [action, setAction] = useState(null);
+
+console.log(price)
 
   useEffect(() => {
-    setItemPrice(() => price * quantity);
+    // setItemPrice(quantity * price);
+    calculateTotalPrice(price, action);
 
-    if (action === "inc") {
-      countTotalPrice(+price);
-    }
-    if (action === "dec") {
-      countTotalPrice(-price);
-    }
   }, [quantity]);
 
-  function handleItemPrice(action) {
-    if (action === "inc") {
-      setQuantity((prequantity) => prequantity + 1);
-      setAction("inc");
-    }
-    if (action === "dec") {
-      if (quantity <= 1) {
-        setQuantity(1);
-      } else {
-        setQuantity((prequantity) => prequantity - 1);
-      }
-      setAction("dec");
-    }
+  function handleInc() {
+    setQuantity((quantity) => quantity + 1);
+    // calculateTotalPrice(price, action);
+    setAction("inc");
+  }
+
+  function handleDec() {
+    // calculateTotalPrice(price, action);
+
+   quantity<=1?setQuantity(1) : setQuantity((quantity) => quantity - 1);
+    setAction("dec");
   }
 
   return (
@@ -55,23 +51,22 @@ function CartItem({
         <li className="w-1/4">${price.toFixed(2)}</li>
         <li className="w-1/4 flex items-center">
           <div className="flex items-center">
-            <button
-              className="px-2 py-1 bg-gray-200 "
-              onClick={() => handleItemPrice("dec")}
-            >
+            <button className="px-2 py-1 bg-gray-200 " onClick={handleDec}>
               -
             </button>
             <span className="mx-2">{quantity}</span>
-            <button
-              className="px-2 py-1 bg-gray-200"
-              onClick={() => handleItemPrice("inc")}
-            >
+            <button className="px-2 py-1 bg-gray-200" onClick={handleInc}>
               +
             </button>
           </div>
         </li>
-        <li className="w-1/4">${itemPrice.toFixed(2)}</li>
-        <button className="text-orange-400 text-xl">delete </button>
+        <li className="w-1/4">${(quantity*price).toFixed(2)}</li>
+        <button
+          className="text-orange-400 text-xl"
+          onClick={() => handleDeleteCart(pid)}
+        >
+          delete{" "}
+        </button>
       </ul>
     </div>
   );
