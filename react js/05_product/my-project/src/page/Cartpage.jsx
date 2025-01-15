@@ -9,13 +9,13 @@ function Cartpage({
   handleDeleteCart,
 }) {
   let [totalPrice, setTotalPrice] = useState(0);
+  let [totalPrice2, setTotalPrice2] = useState(0);
   let [discountWord, setDiscountWord] = useState("");
   let [freeDevivery, setFreedelivery] = useState(false);
 
   let deliveryCharges;
   cartItems.length === 0 ? (deliveryCharges = 0) : (deliveryCharges = 12.0);
 
-  let checkoutPrice = freeDevivery ? totalPrice : totalPrice + deliveryCharges;
 
 
   function cartPriceUpdated() {
@@ -29,30 +29,29 @@ function Cartpage({
       setTotalPrice(cartPriceUpdated());
     } else {
       setTotalPrice(0);
+      setTotalPrice2(0);
     }
-  }, [totalPrice, cartItems]);
+  }, [totalPrice, cartItems,totalPrice2]);
   
-  useEffect(() => {
-    subTotalPassToheader(checkoutPrice.toFixed());
-  }, [checkoutPrice]);
-
+ 
 
 
   
   const calculateTotalPrice = (price, action) => {
 
-  //   if (action === null) {
-  //     setTotalPrice((totalPrice) => totalPrice + price);
+    if (action === null) {
+      setTotalPrice2((totalPrice) => totalPrice + price);
 
-  //   } else if (action === "inc") {
-  //     setTotalPrice((totalPrice) => totalPrice + price);
-  //   } else if (action === "dec") {
-  //     setTotalPrice((totalPrice) => totalPrice - price);
-  //   } else {
-  //     setTotalPrice(0);
+    } else if (action === "inc") {
+      setTotalPrice2((totalPrice) => totalPrice + price);
+    } else if (action === "dec") {
+      setTotalPrice2((totalPrice) => totalPrice - price);
+    } else {
+      setTotalPrice2(0);
 
-  //   }
+    }
   };
+
 
   
   function applyDiscound(event) {
@@ -63,9 +62,15 @@ function Cartpage({
       toast("Coupon Applied!!");
     }
   }
+  
+  totalPrice= (totalPrice+totalPrice2)
 
+  let  checkoutPrice = freeDevivery ? totalPrice : totalPrice + deliveryCharges;
 
-  console.log(totalPrice)
+  useEffect(() => {
+    subTotalPassToheader(checkoutPrice.toFixed());
+
+  }, [checkoutPrice]);
 
   return (
     <div className="flex flex-col md:flex-row gap-10 p-10 relative">
