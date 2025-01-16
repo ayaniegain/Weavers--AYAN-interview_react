@@ -28,7 +28,7 @@ function ProductPage({ products = [], handleGetProductId = 1 }) {
         ☰
       </button>
       <div
-        className={`bg-teal-800 md:w-[15%] w-[100%] h-screen md:h-auto flex flex-col pt-4 transition-transform duration-300 ease-in-out ${
+        className={`bg-gradient-to-r from-cyan-800 to-teal-600  md:w-[15%] w-[100%] h-screen md:h-auto flex flex-col pt-4 transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 z-20 fixed md:relative`}
       >
