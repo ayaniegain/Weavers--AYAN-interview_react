@@ -13,10 +13,10 @@ function Cartpage({
   let [discountWord, setDiscountWord] = useState("");
   let [freeDevivery, setFreedelivery] = useState(false);
 
+console.log(totalPrice2)
+
   let deliveryCharges;
   cartItems.length === 0 ? (deliveryCharges = 0) : (deliveryCharges = 12.0);
-
-
 
   function cartPriceUpdated() {
     return cartItems.reduce((curr, all) => {
@@ -31,45 +31,43 @@ function Cartpage({
       setTotalPrice(0);
       setTotalPrice2(0);
     }
-  }, [totalPrice, cartItems,totalPrice2]);
-  
- 
+  }, [totalPrice, cartItems, totalPrice2]);
 
-
-  
   const calculateTotalPrice = (price, action) => {
-
     if (action === null) {
-      setTotalPrice2((totalPrice) => totalPrice + price);
-
+      // setTotalPrice2((totalPrice) => totalPrice + price);
     } else if (action === "inc") {
       setTotalPrice2((totalPrice) => totalPrice + price);
     } else if (action === "dec") {
       setTotalPrice2((totalPrice) => totalPrice - price);
     } else {
       setTotalPrice2(0);
-
     }
   };
 
-
-  
   function applyDiscound(event) {
     event.stopPropagation();
-    if (discountWord.toLocaleLowerCase() === "freedelivery") {
+    if (
+      discountWord.toLocaleLowerCase() === "freedelivery" ||
+      discountWord.toLocaleLowerCase() === "discound10"
+    ) {
       setFreedelivery(true);
 
       toast("Coupon Applied!!");
     }
   }
-  
-  totalPrice= (totalPrice+totalPrice2)
 
-  let  checkoutPrice = freeDevivery ? totalPrice : totalPrice + deliveryCharges;
+  let checkoutPrice;
+  if (!totalPrice2) {
+    checkoutPrice = freeDevivery ? totalPrice : totalPrice + deliveryCharges;
+  } else {
+    checkoutPrice = freeDevivery
+      ? totalPrice + totalPrice2
+      : totalPrice + totalPrice2 + deliveryCharges;
+  }
 
   useEffect(() => {
     subTotalPassToheader(checkoutPrice.toFixed());
-
   }, [checkoutPrice]);
 
   return (
@@ -171,7 +169,13 @@ function Cartpage({
             Cart Total
           </h2>
           <p className="flex justify-between mb-2">
-            Cart subtotal <span>${totalPrice.toFixed(2)}</span>
+            Cart subtotal{" "}
+            <span>
+              $
+              {totalPrice2
+                ? (totalPrice + totalPrice2).toFixed(2)
+                : totalPrice.toFixed(2)}
+            </span>
           </p>
           <p
             className={`flex justify-between mb-2 ${
