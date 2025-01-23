@@ -1,0 +1,7 @@
+* {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Replace with a valid font weight */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
