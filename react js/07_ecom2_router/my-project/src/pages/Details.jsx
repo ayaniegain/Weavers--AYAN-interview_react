@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import {  useNavigate, useSearchParams } from "react-router";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router";
+import BackBtn from "../components/Button/BackBtn";
+import { CartListContext } from "../context/cartContext";
 
 function Details() {
   let [products, setProducts] = useState(null);
-
+  let { addToCart } = useContext(CartListContext);
 
   const [URLSearchParams] = useSearchParams();
-
-
-  let navigate = useNavigate();
 
   useEffect(() => {
     const productId = URLSearchParams.get("productId");
@@ -35,20 +34,9 @@ function Details() {
     }
   }
 
-  function addToCart(catItem){
- 
-    navigate("/cart",{state:catItem})
-
-  }
-
   return (
     <div className="container mx-auto p-4 min-h-screen flex items-center justify-center relative">
-      <button
-        onClick={() => navigate(-1)}
-        className="absolute top-0 left-10 mt-4 bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition duration-300"
-      >
-        {"<"} Go Back
-      </button>
+      <BackBtn position=" left" />
       {products ? (
         <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-4xl w-full">
           <div className="flex flex-col md:flex-row">
@@ -82,7 +70,7 @@ function Details() {
                 </span>
               </div>
               <button
-                onClick={()=>addToCart(products)}
+                onClick={() => addToCart(products)}
                 className="mt-4 bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition duration-300"
               >
                 Add To Cart

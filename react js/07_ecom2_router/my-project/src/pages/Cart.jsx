@@ -1,40 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import React, { useContext, useEffect,  } from "react";
+// import { useLocation } from "react-router";
+import { toast } from "react-toastify";
+import BackBtn from "../components/Button/BackBtn";
+import { CartListContext } from "../context/cartContext";
 
 function Cart() {
-  const { state } = useLocation();
-  const [cartItems, setCartItems] = useState([]);
+  let {cartItems, setCartItems,showCartDetails}=useContext(CartListContext)
+console.log(cartItems)
+  // const { state } = useLocation();
+  // const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    if (state) {
-      setCartItems((prevItems) => [...prevItems, { ...state, quantity: 1 }]);
-    }
-  }, [state]);
+  // useEffect(() => {
+  //   if (state) {
+  //     setCartItems((prevItems) => [...prevItems, { ...state, quantity: 1 }]);
+  //   }
+  // }, [state]);
 
   const itemIncandDec = (action, id) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id
-          ? {
-              ...item,
-              quantity: action === "inc" ? item.quantity + 1 : Math.max(item.quantity - 1, 1),
-            }
-          : item
-      )
-    );
-  };
+    setCartItems((prevItems) =>prevItems.map((item) =>item.id === id? {...item,quantity:action === "inc"? item.quantity + 1: Math.max(item.quantity - 1, 1),}: item));};
 
   const deleteItemFunc = (id) => {
+    toast.warn("item deleted !");
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const deliveryCharge = 5;
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+  let deliveryCharge;
+
+  cartItems.length > 0 ? (deliveryCharge = 5) : (deliveryCharge = 0);
+
+  useEffect(() => {
+    showCartDetails(totalPrice, cartItems.length, deliveryCharge);
+  }, [cartItems]);
 
   return (
-    <div className="container mx-auto p-4 min-h-screen">
-      <p className="text-xl font-bold">Cart Page</p>
-      <span className="text-sm">No of items: {cartItems.length}</span>
+    <div className="container mx-auto p-4 min-h-screen relative ">
+      <BackBtn position="right" />
+
+      <p className="text-xl font-bold mt-2 text-center">CART PAGE</p>
+      <span className="text-sm ">No of items: {cartItems.length}</span>
       <div className="flex flex-col md:flex-row mt-4 gap-4">
         {/* Cart Items Section */}
         <div className="w-full md:w-2/3">
@@ -45,17 +52,19 @@ function Cart() {
             return (
               <div
                 key={id}
-                className="flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg p-4 mb-4"
+                className="flex flex-col md:flex-row items-center bg-white shadow-[5px_5px_15px_rgba(0,0,0,0.3)]  rounded-lg p-4 mb-4"
               >
                 <img
                   src={image}
                   alt="Product"
-                  className="w-20 h-20 object-cover rounded-md mr-4"
+                  className="w-20 h-20 object-fill rounded-md mr-4"
                 />
                 <div className="flex flex-col md:flex-row w-full justify-between">
                   {/* Product Info */}
                   <div className="flex flex-col">
-                    <h2 className="text-md font-semibold">{title}</h2>
+                    <h2 className="text-md font-semibold">
+                      {title.slice(0, 20)}
+                    </h2>
                     <p className="text-gray-700">${formattedPrice}</p>
                   </div>
                   {/* Quantity Controls */}
@@ -93,7 +102,7 @@ function Cart() {
         </div>
         {/* Price Details Section */}
         <div className="w-full md:w-1/3">
-          <div className="bg-white shadow-md rounded-lg p-4 sticky top-4">
+          <div className="bg-white shadow-[5px_5px_15px_rgba(0,0,0,0.3)]  rounded-lg p-4 sticky top-4">
             <h2 className="text-xl font-semibold mb-4">Price Details</h2>
             <div className="mb-2 flex justify-between">
               <span>Price:</span>

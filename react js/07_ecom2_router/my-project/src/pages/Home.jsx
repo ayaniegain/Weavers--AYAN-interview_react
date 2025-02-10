@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import HomeShimmer from "../components/LoadingEffect/Home.shimmer";
 
 function Home() {
   let [products, setProducts] = useState([]);
@@ -7,7 +8,7 @@ function Home() {
 
   async function fetchData() {
     try {
-      const response = await fetch("/public/sample.json", {
+      const response = await fetch("http://localhost:8080/api/v1", {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -32,12 +33,7 @@ function Home() {
   return (
     <main className="min-h-screen flex flex-wrap gap-2 justify-center bg-slate-200 p-4">
       {products.length === 0 ? (
-        <div className="flex justify-center items-center h-60">
-          <span className="loading loading-bars loading-xs"></span>
-          <span className="loading loading-bars loading-sm"></span>
-          <span className="loading loading-bars loading-md"></span>
-          <span className="loading loading-bars loading-lg"></span>
-        </div>
+        <HomeShimmer/>
       ) : (
         products.map((product) => (
           <div key={product.id} className="card bg-base-100 w-80 shadow-md m-2 flex-shrink-0">

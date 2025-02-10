@@ -7,7 +7,6 @@ import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import NoPageFound from "./pages/NoPageFound";
 
-
 function App() {
   return (
     <>
