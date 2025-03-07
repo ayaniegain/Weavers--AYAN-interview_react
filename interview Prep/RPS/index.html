@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="bg-gray-800 text-white flex items-center justify-center min-h-screen"
+  >
+    <div class="bg-gray-900 p-8 rounded-lg shadow-lg w-96 text-center">
+      <!-- Player 1 -->
+      <h1 class="text-2xl font-bold mb-4">Player 1</h1>
+      <div class="mb-4">
+        <select
+          class="bg-gray-700 text-white p-2 rounded w-full"
+          id="myDropdown"
+          onchange="playerOneSelection()"
+        >
+          <!-- <option>choose one</option> -->
+          <option value="0">Rock</option>
+          <option value="1">Paper</option>
+          <option value="2">Scissors</option>
+        </select>
+      </div>
+      <button
+        class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white w-full"
+        onclick="PalyGame()"
+      >
+        Play
+      </button>
+
+      <!-- Game Result -->
+      <div class="mt-6">
+        <h2 class="text-xl font-semibold" id="result">Rock/Paper/Scissors</h2>
+        <!-- <h2 class="text-lg text-red-500">Game Over</h2> -->
+        <!-- <button
+          class="mt-4 bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-white w-full"
+        >
+          Reset
+        </button> -->
+      </div>
+
+      <!-- Player 2 -->
+      <div class="mt-6">
+        <h1 class="text-2xl font-bold">Player 2</h1>
+        <p class="text-lg font-medium bg-gray-700 p-2 rounded" id="player2"></p>
+      </div>
+    </div>
+  </body>
+</html>
