@@ -194,52 +194,44 @@
 
 // obj.method(fn, 2);
 
-// --------- THIS act different way --------
+// -----PROBLEM------
+// 1.md
+// function memoize(func) {
 
-var a = 10;
+//     const cache = {};
 
-function myfunc() {
-  // console.log(this.a) //window
+//     return function (...args) {
+//         const key = JSON.stringify(args);
+
+//         if (cache[key]) {
+//             return cache[key];
+//         } else {
+//             const result = func.apply(this, args);
+
+//             cache[key] = result;
+//             return result;
+//         }
+//     };
+
+// }
+
+// const fn = (a, b) => a + b;
+// const memoizedFn = memoize(fn);
+
+// console.log(memoizedFn(2, 3));
+
+// 5
+
+
+
+
+
+function customSetInterval(...args){
+
+    console.log(args)
+
 }
-myfunc();
 
-let myArrowfunc = () => {
-  // console.log(this.a) //window
-};
-myArrowfunc();
+const cancel = customSetInterval(() => console.log("Hello"), 1000);
 
-// let name = "Ashish";
-
-let obj = {
-  name: "hello",
-
-  fullname: function () {
-    // console.log(this);
-  },
-  Arrfullname: () => {
-    // console.log(self);
-  },
-
-  insideFunc: function() {
-    (() => {
-    //   console.log(self); // window both arrow and function
-    })();
-  },
- 
-  otherCondition: function() {
-     return this.name //inner obj
-  },
-  otherConditionArrow: ()=> {
-    return this.name //window name //ashish
- },
-};
-
-obj.fullname();
-obj.Arrfullname();
-obj.insideFunc();
-// console.log(obj.otherCondition())
-// console.log(obj.otherConditionArrow())
-let res1=obj.otherCondition
-let res2=obj.otherConditionArrow
-// console.log(res1())
-// console.log(res2())
+setTimeout(cancel, 5000);
