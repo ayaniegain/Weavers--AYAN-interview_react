@@ -35,7 +35,7 @@
 //   arr.reduce((curr, all) => {
 //       val.push({ name: all, val: all.length });
 //     }, 0);
-    
+
 //     console.log(val)
 //   longestArr = val.sort((a, b) => b.val - a.val);
 
@@ -47,8 +47,6 @@
 // let res = checkLongestString(arr);
 
 // console.log(res);
-
-
 
 // function longestString(arr) {
 //     return arr.reduce((a, b) => a.length > b.length ? a : b, "");
@@ -87,26 +85,11 @@
 
 //  let nwstr=mystr.split(" ")
 
-
 //  let myarr=nwstr.map((e)=>e.slice(0,1).toUpperCase()+e.slice(1)).join(" ")
 
 //  console.log(myarr)
 
-// 10 
+// 10
 // let arr =[2,4,5,7,1]
 
 // console.log(arr.sort((a,b)=>a-b)[0])
-
-
-// let arr=[45,32,56,20]
-
-// let max=arr[0];
-
-// for (let i = 0; i < arr.length; i++) {
-
-//     if (arr[i]<min) {
-//         max=arr[i]
-        
-//     }
-    
-// }
