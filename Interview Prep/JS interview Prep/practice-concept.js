@@ -505,18 +505,18 @@
 
 // -------CALL APPLY BIND----
 
-let obj = {
-  game: true,
-};
+// let obj = {
+//   game: true,
+// };
 
-let obj2 = {
-  game: false,
-  gameEvent: function(name) {
-    console.log(`game event on: ${this.game} ${name}`);
-  },
-};
+// let obj2 = {
+//   game: false,
+//   gameEvent: function(name) {
+//     console.log(`game event on: ${this.game} ${name}`);
+//   },
+// };
 
 
-obj2.gameEvent.call(obj,"ayan")
-// obj2.gameEvent()
+// obj2.gameEvent.call(obj,"ayan")
+// // obj2.gameEvent()
 
