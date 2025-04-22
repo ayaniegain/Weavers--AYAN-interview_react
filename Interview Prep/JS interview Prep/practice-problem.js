@@ -222,16 +222,141 @@
 
 // 5
 
+// function customSetInterval(...args){
+
+//     console.log(args)
+
+// }
+
+// const cancel = customSetInterval(() => console.log("Hello"), 1000);
+
+// setTimeout(cancel, 5000);
+
+let arr = [45, 34, 62, 22, 67];
+
+// console.log(arr.filter((e)=>e%2==0).sort()[0])
+
+// console.log(arr.reduce((a,b)=>a>b? a:b,0))
+
+// console.log(a)
+
+// let a=88
+
+// let obj1={
+//     name:"Ayan",
+//     code:{skills:"JS"},
+//     // learn: function(age){
+//     //        console.log(`I am ${this.name} age ${age}`)
+//     // }
+// }
+
+// // console.log(obj1)
+
+// // obj1.learn()
+
+// // let obj2={
+//     //     name:"rohit"
+//     // }
+//     let obj2 = structuredClone(obj1);
+//     obj2.name="rohit"
+//     console.log(obj2)
+
+// // obj1.learn.call(obj2,16)
+
+// let a=[]
+// let b={}
+// console.log(a===b)
+
+// function name(a) {
+//   return function (b) {
+//     return function (c) {
+//       return a + b + c;
+//     };
+//   };
+// }
+
+// console.log(name(2)(34)(5));
+
+// let arr2=[45,66,33,44,56]
+// let mid= arr2.length/2
+
+// arr2.subString
+
+// let val=arr2.slice(mid,mid+1)
+
+// console.log(val)
+
+// function getValue(cb) {
+//   let b = 20;
+//   return cb(b);
+// }
+
+// function sum(b) {
+//   let a = 10;
+//   return a + b;
+// }
+
+// console.log(getValue(sum));
 
 
+// let cx=[34,56,34,2,7,56]
+
+// console.log(cx.filter((e,i)=>cx.indexOf(e)==i))
+// // console.log([... new Set(cx)])
+
+// let users = [
+//     { id: 1, name: "Ayan" },
+//     { id: 2, name: "Rohit" },
+//     { id: 1, name: "Ayan" }
+// ];
 
 
-function customSetInterval(...args){
+// let val= [... new Map(users.map(e=>[e.name,e])).values()]
 
-    console.log(args)
 
-}
+// console.log(val)
 
-const cancel = customSetInterval(() => console.log("Hello"), 1000);
 
-setTimeout(cancel, 5000);
+// let arr3=[30,45,32]
+// let arr5=[45,32,80]
+
+
+// let res=arr3.filter((e)=>{
+//     return arr5.includes(e)
+// })
+
+// console.log(res)
+
+
+// let str="hello how are you"
+
+
+// let obj={a:0,e:0,i:0,o:0,u:0}
+
+// let arrmx= str.split("")
+
+// for(let elm of arrmx){
+//     obj[elm]=(obj[elm] || 1) +1
+// }
+
+// console.log(obj)
+
+
+// let str = "hello how are you";
+
+// let obj = { a: 0, e: 0, i: 0, o: 0, u: 0 };
+
+// let arrmx = str.split("");
+
+// for (let elm of arrmx) {
+//     if (obj.hasOwnProperty(elm)) {
+//         obj[elm] += 1;
+//     }
+// }
+
+// console.log(obj);
+
+d1 ={"john": 40,"peter": 45}
+d2 ={"john": 40,"peter": 45}
+
+console.log(d1==d2)

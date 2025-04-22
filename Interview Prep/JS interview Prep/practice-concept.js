@@ -516,7 +516,118 @@
 //   },
 // };
 
-
 // obj2.gameEvent.call(obj,"ayan")
 // // obj2.gameEvent()
+
+//  const ws = new WeakSet();
+// const obj = {};
+// ws.add(obj);
+// console.log(ws); // true
+
+// A small object representing a person
+
+// const person = {
+//     name: "Ayan",
+//     age: 27,
+//     isStudent: false
+//   };
+
+// let {name,age,isStudent}=person
+
+// console.log(name)
+
+// function name(a) {
+
+//  return   function (b) {
+
+//        return function(c){
+
+//                 return a+b+c
+//         }
+//     }
+
+// }
+
+// console.log(name(1)(2)(3))
+
+// String Manipulation (reverse string, palindrome, anagram)
+// Array Problems (two-sum, rotate array, merge intervals)
+// Object Problems (deep clone, flatten object)
+// Closures (counter, memoization)
+// Promises (sequential execution, Promise.all)
+// DOM Challenges (build a todo list, dynamic form)
+
+// function mypromise() {
+//   let res = new Promise((resolve, reject) => {
+//     let work = true;
+//     if (work) {
+//       resolve("work finished");
+//     } else {
+//       reject("Not work finished");
+//     }
+//   });
+
+//   return res;
+// }
+
+// (async () => {
+//   try {
+//     let result = await mypromise();
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// })();
+
+// mypromise()
+//   .then((e) => console.log(e))
+//   .catch((err) => console.log(err));
+
+// function one() {
+//     const promise1 = new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve(1)
+//       }, 1000)
+//     })
+//     return promise1
+//   }
+  
+//   function two() {
+//     const promise2 = new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve(2)
+//       }, 2000)
+//     })
+//     return promise2
+//   }
+  
+//   function three() {
+//     const promise3 = new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve(3)
+//       }, 3000)
+//     })
+//     return promise3
+//   }
+  
+//   async function test() {
+//     try {
+//       // Sequentially calling api one after the other
+//       const resp1 = await one()
+//       const resp2 = await two()
+//       const resp3 = await three()
+//       const output = resp1 + resp2 + resp3
+//       console.log("Response is" + output)
+  
+//       // Calling api's in parallel
+//       const output1 = await Promise.allSettled([one(), two(), three()])
+//       console.log("Response is" + JSON.stringify(output1))
+//     } catch (error) {
+//       console.log("Error is" + error)
+//     }
+//   }
+  
+//   test()
+
+
 

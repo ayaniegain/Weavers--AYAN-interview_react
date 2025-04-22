@@ -6,6 +6,7 @@ import "./App.css";
 // import DoM from "./components/DoM";
 import One from "./components/FIRST/One";
 import FormState from "./components/FIRST/FormState";
+import Parent from "./components/SECOND/Parent";
 
 function App({ children }) {
   // const [count, setCount] = useState(0);
@@ -21,6 +22,7 @@ function App({ children }) {
       <DoM/> */}
       {/* <One/> */}
       {/* <FormState/> */}
+      <Parent/>
     </div>
   );
 }
