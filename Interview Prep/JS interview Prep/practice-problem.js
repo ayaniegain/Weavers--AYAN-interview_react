@@ -356,14 +356,7 @@ let arr = [45, 34, 62, 22, 67];
 
 // console.log(obj);
 
-<<<<<<< HEAD
 // d1 ={"john": 40,"peter": 45}
 // d2 ={"john": 40,"peter": 45}
 
 // console.log(d1==d2)
-=======
-d1 ={"john": 40,"peter": 45}
-d2 ={"john": 40,"peter": 45}
-
-console.log(d1==d2)
->>>>>>> d12c73e905ad89a4c0c46e2030f61cb337873751
