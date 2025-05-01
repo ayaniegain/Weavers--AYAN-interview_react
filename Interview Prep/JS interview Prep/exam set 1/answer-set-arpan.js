@@ -408,11 +408,9 @@
 //     return false
 //   }
 
- 
 // }
 
 // console.log(anagramCheck("silent", "listen"));
-
 
 // 29
 
@@ -420,9 +418,6 @@
 //     let arr=text.split(" ")
 
 //  return   arr.reduce((a,b)=>a.length>b.length ? a:b,"")
-
-
-
 
 // }
 
@@ -455,7 +450,7 @@
 // for (const key of Object.entries(obj)) {
 
 //     console.log(key)
-    
+
 // }
 // 32
 // let obj1={a: 1, b: 2, c: 3};
@@ -467,6 +462,92 @@
 
 // 34
 
-let obj1={a: 1, b: 2, c: 3};
+// let obj1={a: 1, b: 2, c: 3};
 
+// function isPallen(word) {
+//   let nwWord = word.split("").reverse("").join("");
+
+//   if (word === nwWord) {
+//     return "this is palindrome";
+//   } else {
+//     return "this is not a palindrome";
+//   }
+// }
+
+// console.log(isPallen("hlh"));
+
+// function checkuniqueChar(word) {
+//   let newWord = word.split("");
+
+//   let arr = [];
+//   for (const i of newWord) {
+//       if (!arr.includes(i)) {
+//         arr.push(i)
+//     }
+//   }
+
+//   return arr.join("")
+// }
+
+// console.log(checkuniqueChar("ravii"));
+
+// function removeDuplicate(arr) {
+
+//     return arr.filter((e,i)=>arr.indexOf(e)==i)
+
+// }
+
+// console.log(removeDuplicate([1, 2, 2, 3, 4, 4, 5]))
+
+// let obj = {a: 1, b: 2, c: 3}
+
+// let res= Object.entries(obj)
+
+// console.log(res)
+
+// let obj = {};
+
+// function occranceofNo(arr) {
+//   for (const i of arr) {
+//     obj[i] = obj[i] + 1 || 1;
+//   }
+// }
+// occranceofNo([1, 2, 2, 3, 3, 3]);
+
+// console.log(obj);
+
+// let str = ["a", "e", "i", "o", "u"];
+// function occranceofNo(arr) {
+//   count = 0;
+//   let newArr = arr.split("");
+
+//   for (const strArr of newArr) {
+//     if (str.includes(strArr)) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(occranceofNo("malloc"));
+
+
+// const users = [
+//     { id: 1, name: "John", age: 25, city: "New York" },
+//     { id: 2, name: "Emma", age: 30, city: "London" },
+//     { id: 3, name: "Alex", age: 28, city: "Tokyo" }
+//   ];
+
+
+//   let res=users.reduce((curr,all)=>{
+//         return all.age+curr
+//   },0)
+
+//   console.log(res)
+
+//   let arrval=['apple', 'banana', 'kiwi']
+
+
+//   let ress=arrval.reduce((a,b)=>a.length>b.length?a:b,0)
+
+//   console.log(ress)
 

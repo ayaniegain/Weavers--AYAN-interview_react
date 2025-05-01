@@ -356,7 +356,7 @@ let arr = [45, 34, 62, 22, 67];
 
 // console.log(obj);
 
-d1 ={"john": 40,"peter": 45}
-d2 ={"john": 40,"peter": 45}
+// d1 ={"john": 40,"peter": 45}
+// d2 ={"john": 40,"peter": 45}
 
-console.log(d1==d2)
+// console.log(d1==d2)
