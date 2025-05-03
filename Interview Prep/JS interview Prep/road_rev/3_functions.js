@@ -48,7 +48,7 @@
 
 //7 Arrow function vs normal function
 // - not return
-// - this key word in object undefined
+// - this key word in object undefined {}
 // - normal function  arguments work
 // - syntax diff
 
@@ -94,8 +94,22 @@
 // console.log(user[id]);     // 101
 // console.log(Object.keys(user)); // ["name"] — Symbol key is hidden
 
-const a = Symbol("id");
-const b = Symbol("id");
+// const a = Symbol("id");
+// const b = Symbol("id");
 
 
-console.log(a,b)
+// console.log(a,b)
+
+
+
+
+
+//  (()=>"first")()
+
+
+// let vb=()=> {
+    
+//     return("vb")
+// }
+
+// console.log(vb())

@@ -1,12 +1,12 @@
 import React from 'react'
 import Content from './components/TODO2/Content'
-// import Input from './TODO/Input'
+import Input from './TODO/Input'
 
 function App() {
   return (
     <>
-    {/* // <div><Input/></div> */}
-     <div><Content/></div>
+    <div><Input/></div>
+     {/* <div><Content/></div> */}
     </>
   )
 }

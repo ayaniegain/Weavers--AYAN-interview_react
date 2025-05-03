@@ -1,4 +1,5 @@
 const listOfArray = [1, 2, 3, 4];
+
 const arrayOfObjects = [
   { id: 1, name: "Alice", age: 25, rollno: 101, marks: 80 },
   { id: 2, name: "Bob", age: 30, rollno: 102, marks: 69 },
@@ -13,7 +14,7 @@ let totalMarks = arrayOfObjects
   .filter((e) => e.marks > 60)
   .reduce((int, all) => int + all.marks, 0);
 
-console.log(totalMarks);
+console.log(totalMarks); 
 
 // let res = listOfArray.map((e) => e * 3);
 // let resFilterValues = listOfArray.filter((e) => e>2);

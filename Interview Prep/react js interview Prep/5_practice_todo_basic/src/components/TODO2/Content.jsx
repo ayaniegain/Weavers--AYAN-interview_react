@@ -56,7 +56,7 @@ function Content() {
   }
 
   return (
-    <div className="flex flex-col pt-20 items-center min-h-screen bg-gray-100 p-4">
+    <div className="flex flex-col pt-20 items-center min-h-screen bg-black text-white p-4">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">TODO</h2>
       <div className="flex gap-2 mb-6">
         <input
@@ -85,12 +85,12 @@ function Content() {
         )}
       </div>
       {todo.length >= 1 &&
-        todo.map(({ id, task }) => (
+        todo.map(({ id, task, },i) => (
           <div
             key={id}
             className="flex items-center gap-4 bg-white shadow-md p-4 rounded-md w-full max-w-md"
           >
-            <p className="text-gray-700 font-medium">1{")"}</p>
+            <p className="text-gray-700 font-medium">{+i+1}{")"}</p>
             <h4 className="flex-1 text-gray-800 font-semibold">{task}</h4>
             <button
               onClick={() => handleEdit(id)}
