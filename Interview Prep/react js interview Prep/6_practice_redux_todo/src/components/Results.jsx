@@ -5,7 +5,7 @@ import { deleteTodo, setInputValue,checkedInput } from '../REDUX/toDoSlice'
 function Results() {
   const dispatch = useDispatch()
 
-  let AllCART = useSelector((state) => state.mytodo.cart)
+  let {eId,cart :AllCART} = useSelector((state) => state.mytodo)
 
   if (!AllCART) {
     return (
@@ -52,6 +52,7 @@ function Results() {
               <button
                 onClick={() => dispatch(deleteTodo(id))}
                 className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                disabled={id===eId}
               >
                 Delete
               </button>

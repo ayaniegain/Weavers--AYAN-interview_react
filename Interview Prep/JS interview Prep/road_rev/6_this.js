@@ -2,17 +2,17 @@
 // ---------1
 // this.name="Ayan"
 
-// let user = {
-//   name: "Pyuish",
-//   age: 23,
-//   getDetails: function () {
-//     (() => {
-//       console.log(this.name);
-//     })();
-//   },
-// };
+let user = {
+  name: "Pyuish",
+  age: 23,
+  getDetails:  ()=> {
+    (() => {
+      console.log(this.name);
+    })();
+  },
+};
 
-// user.getDetails();
+user.getDetails();
 
 // ------------2
 
@@ -45,3 +45,25 @@
 
 // console.log(user.ref().name)
 
+// let obj=[]
+
+// let dd= Object.isArray(arr)
+
+
+// console.log(dd)
+
+
+// let obj="2"
+
+// let obj1=new String(2)
+
+
+// console.log(obj==obj1)
+
+
+// let arr= [34,44,234,4242,4242]
+
+// let xx=arr.splice(1, 2);
+
+// console.log(xx)
+// console.log(arr)

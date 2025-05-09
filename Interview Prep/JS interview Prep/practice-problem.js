@@ -360,3 +360,37 @@ let arr = [45, 34, 62, 22, 67];
 // d2 ={"john": 40,"peter": 45}
 
 // console.log(d1==d2)
+
+
+let str="ayan biswas coder"
+
+
+function capitalWord(str) {
+
+    let strvalue=str.split(' ')
+
+
+    let newArry=[]
+
+
+    for (const arr of strvalue) {
+
+       let first=(arr.slice(0,1).toUpperCase())
+       
+       let last=(arr.slice(1,arr.length))
+
+      newArry.push(first+last)
+
+
+
+
+        
+    }
+
+return newArry.join(" ")
+    
+}
+
+let res=capitalWord(str)
+
+console.log(res)
