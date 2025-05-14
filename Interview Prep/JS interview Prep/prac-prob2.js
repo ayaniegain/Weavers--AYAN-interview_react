@@ -212,17 +212,48 @@
 //   })(i);
 // }
 
-let newArry = [];
-function missingArray(arr) {
-  let low = arr[0];
-  let high = arr[arr.length - 1];
+// let newArry = [];
+// function missingArray(arr) {
+//   let low = arr[0];
+//   let high = arr[arr.length - 1];
 
-  for (let i = low; i <= high; i++) {
-    newArry.push(i);
-  }
+//   for (let i = low; i <= high; i++) {
+//     newArry.push(i);
+//   }
 
-  return newArry.filter((e)=>!arr.includes(e))
+//   return newArry.filter((e)=>!arr.includes(e))
 
-}
+// }
 
-console.log(missingArray([1, 2, 4, 5, 6]));
+// console.log(missingArray([1, 2, 4, 5, 6]));
+
+
+// function myletter(text,pos) {
+
+//   // return text.split("").map((e)=>e.charCodeAt()).map((e)=>e+pos).map((e)=>String.fromCharCode(e)).join("")
+
+//   return text.split("").map((e)=>String.fromCharCode(e.charCodeAt()+pos)).join("")
+
+
+// }
+
+// console.log(myletter("Abcde",4)) //defgh
+
+
+// let obj={
+//   name:"ayan",
+//   displayStay:function(myname){
+//     console.log(`my name ${myname.name} is`)
+//   }
+// }
+
+
+
+// let obj2={
+//   name:"Rahul"
+// }
+
+// obj.displayStay(obj2)
+
+let arr = ['Rajat', 'Raj']
+console.log(arr.__proto__.__proto__)

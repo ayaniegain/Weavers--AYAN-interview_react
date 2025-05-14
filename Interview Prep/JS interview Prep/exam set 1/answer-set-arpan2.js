@@ -31,12 +31,10 @@
 
 // 4
 
-
-
 // function removeElm(array) {
 
 //     return array.filter((elm,i)=>array.indexOf(elm)==i);
- 
+
 // }
 
 // let res = removeElm([1, 2, 2, 3, 4, 4, 5]);
@@ -52,3 +50,31 @@
 // let res= checkPossitive([1, 2, 3, 4, 5])
 
 // console.log(res)
+
+// 1
+// let arr= [1, 2, 3, 4, 5]
+
+// console.log(arr.reduce((a,b)=>a+b))
+
+// 2
+
+// let arr = [110, 20, 5, 450, 3400];
+
+// let max = arr[0];
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > max) {
+//     max = arr[i];
+//   }
+// }
+
+// console.log(max);
+
+
+console.log(parseInt("78F"))
+
+// console.log([2,4,5,6,24].map((e)=>{
+//     if (e>0) return;
+
+//     return e*2
+// }))
