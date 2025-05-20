@@ -4,16 +4,24 @@ import API from "../../API/dataFetch";
 const fetchProducts = createAsyncThunk(
   "users/fetchproduct",
   async (_, thunkAPI) => {
-    const response = await API.getAllProducts();
-    return response;
+     try {
+      const response = await API.getAllProducts();
+      return response;
+    } catch (error) {
+      return thunkAPI.rejectWithValue('Failed to fetch products');
+    }
   }
 );
 
 const fetchProductDetails = createAsyncThunk(
   "users/fetchDetails",
-  async (userId, thunkAPI) => {
-    const response = await API.productDetails(userId);
-    return response;
+  async (productId, thunkAPI) => {
+    try {
+      const response = await API.productDetails(productId);
+      return response;
+    } catch (error) {
+      return thunkAPI.rejectWithValue('Failed to fetch product details');
+    }
   }
 );
 
