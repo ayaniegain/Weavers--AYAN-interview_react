@@ -30,7 +30,10 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      state.cart.push(action.payload);
+      const exists = state.cart.find(item => item.id === action.payload.id);
+  if (!exists) {
+    state.cart.push(action.payload);
+  }
     },
     deleteCart: (state, action) => {
       state.cart = state.cart.filter((e) => e.id !== +action.payload);

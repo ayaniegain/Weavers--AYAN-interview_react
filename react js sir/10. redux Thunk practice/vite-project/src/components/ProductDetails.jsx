@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../REDUX/product.slice';
-import { useNavigate } from 'react-router';
+import { addToCart, fetchProductDetails } from '../REDUX/product.slice';
+import { useNavigate, useParams } from 'react-router';
 
 function ProductDetails() {
-  const { productDetails, loading } = useSelector((state) => state.product);
+  const { productDetails, loading,product } = useSelector((state) => state.product);
   let dispatch = useDispatch();
   let navigate = useNavigate();
+
+  let {id}=useParams()
+console.log(product)
+
+console.log(id)
+useEffect(()=>{
+
+  
+  if (id && !productDetails ) {
+    
+    dispatch(fetchProductDetails(Number(id)))
+    
+  }
+},[dispatch,id,productDetails])
 
   if (loading === 'loading') {
     return <div className="text-center p-4 text-lg">Loading product details...</div>;
@@ -17,9 +31,13 @@ function ProductDetails() {
   }
 
   function handleAddToCart() {
+  if (productDetails && productDetails.id) {
     dispatch(addToCart(productDetails));
     navigate('/cart');
+  } else {
+    alert('Product details not available.');
   }
+}
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-lg">
