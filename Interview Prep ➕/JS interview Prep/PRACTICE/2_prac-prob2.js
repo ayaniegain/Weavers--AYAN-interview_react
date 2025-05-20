@@ -255,5 +255,66 @@
 
 // obj.displayStay(obj2)
 
-let arr = ['Rajat', 'Raj']
-console.log(arr.__proto__.__proto__)
+// let arr = ['Rajat', 'Raj']
+// console.log(arr.__proto__.__proto__)
+
+
+
+// let p1= new Promise((resolve)=>{
+//     setTimeout(()=>{
+//         resolve("p1 success")
+//     },3000)
+// })
+
+
+// let p2= new Promise((resolve)=>{
+//     setTimeout(()=>{
+//         resolve("p2 success")
+//     },4000)
+// })
+
+
+// const p3 = Promise.reject("P3 failed");
+
+// Promise.all([p1,p2,p3])
+// .then((result)=> console.log("any",result))
+// .catch((err)    => console.log("any",err))
+
+
+// import {Suspence,lazy} from "react"
+
+// const Home= lazy(()=> import (./Home))
+// const About= lazy(()=> import (./About))
+
+// function App(){
+//     return (
+//         <Suspence fallback={<div> Loading....</div>}>
+//             <About/>
+//         </Suspence>
+//     )
+// }
+
+
+
+ 
+function memoization (){
+
+    const cache={}
+
+    return function (x,y){
+
+        const key=x+ ","+y
+
+        if (condition) {
+            
+        }
+    }
+
+}
+
+let add=memoization()
+
+console.log(add(2,3))
+console.log(add(2,3))
+
+
