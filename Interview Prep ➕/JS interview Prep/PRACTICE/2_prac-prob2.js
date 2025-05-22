@@ -227,18 +227,15 @@
 
 // console.log(missingArray([1, 2, 4, 5, 6]));
 
-
 // function myletter(text,pos) {
 
 //   // return text.split("").map((e)=>e.charCodeAt()).map((e)=>e+pos).map((e)=>String.fromCharCode(e)).join("")
 
 //   return text.split("").map((e)=>String.fromCharCode(e.charCodeAt()+pos)).join("")
 
-
 // }
 
 // console.log(myletter("Abcde",4)) //defgh
-
 
 // let obj={
 //   name:"ayan",
@@ -246,8 +243,6 @@
 //     console.log(`my name ${myname.name} is`)
 //   }
 // }
-
-
 
 // let obj2={
 //   name:"Rahul"
@@ -258,14 +253,11 @@
 // let arr = ['Rajat', 'Raj']
 // console.log(arr.__proto__.__proto__)
 
-
-
 // let p1= new Promise((resolve)=>{
 //     setTimeout(()=>{
 //         resolve("p1 success")
 //     },3000)
 // })
-
 
 // let p2= new Promise((resolve)=>{
 //     setTimeout(()=>{
@@ -273,13 +265,11 @@
 //     },4000)
 // })
 
-
 // const p3 = Promise.reject("P3 failed");
 
 // Promise.all([p1,p2,p3])
 // .then((result)=> console.log("any",result))
 // .catch((err)    => console.log("any",err))
-
 
 // import {Suspence,lazy} from "react"
 
@@ -294,27 +284,92 @@
 //     )
 // }
 
+// function memoization (){
+
+//     const cache={}
+
+//     return function (x,y){
+
+//         const key=x+ ","+y
+
+//         if (condition) {
+
+//         }
+//     }
+
+// }
+
+// let add=memoization()
+
+// console.log(add(2,3))
+// console.log(add(2,3))
+
+// JS EXAM
+// 1
+// let arr=[12,45,33,56,43,44,23,90]
+
+// function checkPositive(arr) {
+
+//     return arr.filter((e)=>e%2==0)
+
+// }
+
+// let result=checkPositive(arr)
+
+// console.log(result)
+
+// 2
+
+// let person = [
+//   { name: "Alice", age: 25 },
+//   { name: "Bob", age: 30 },
+//   { name: "kitty", age: 20 },
+// ];
+
+// function oldrestPerson(person){
 
 
- 
-function memoization (){
+//     return person.filter((e)=>e.age>=30)
 
-    const cache={}
+// }
+// let result=oldrestPerson(person)
 
-    return function (x,y){
-
-        const key=x+ ","+y
-
-        if (condition) {
-            
-        }
-    }
-
-}
-
-let add=memoization()
-
-console.log(add(2,3))
-console.log(add(2,3))
+// console.log(result[0].name)
 
 
+// 3
+
+// function checkFileExtention(file){
+
+//     return file.split('.').pop()
+
+// }
+
+// console.log(checkFileExtention("hello.pdf"))
+
+// 4
+
+// let arr=[23,45,2,56,43,21,88]
+
+// console.log(Math.min(...arr))
+
+// 5
+
+// let a=5
+// let b=8
+// console.log([a,b]=[b,a])
+
+// 6 
+
+// let arr=[0,"hello",false,42,null,"world",undefined]
+
+// console.log(arr.filter(Boolean))
+
+
+// 7
+
+// let arrs=[1,2,5,8,6,5,1,2,5]
+
+// let res=arrs.filter((e,i)=>arrs.indexOf(e)!==i)
+
+// console.log(res)
