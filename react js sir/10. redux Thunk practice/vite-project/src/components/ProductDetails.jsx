@@ -4,7 +4,7 @@ import { addToCart, fetchProductDetails } from "../REDUX/product.slice";
 import { useNavigate, useParams } from "react-router";
 
 function ProductDetails() {
-  const { productDetails, loading, product } = useSelector(
+  const { productDetails, loading } = useSelector(
     (state) => state.product
   );
   let dispatch = useDispatch();

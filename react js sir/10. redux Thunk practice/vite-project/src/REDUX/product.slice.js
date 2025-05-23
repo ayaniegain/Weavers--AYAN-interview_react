@@ -28,7 +28,7 @@ const fetchProductDetails = createAsyncThunk(
 const initialState = {
   product: [],
   cart: [],
-  loading: "idle",
+  loading: "success",
   error: null,
   productDetails: null,
 };
@@ -57,7 +57,7 @@ export const productSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
-        state.loading = "idle";
+        state.loading = "success";
         state.product = action.payload;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
